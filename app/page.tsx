@@ -13,6 +13,9 @@ export default function Home() {
             Please be patient as we update the website.
           </p>
           <a href="/testpage">Here's a link to the test page</a>
+          <a href="/create">Here's a link to the create account page</a>
+          <a href="/login">Here's a link to the login page</a>
+          <a href="/profile/ownerview">Here's a link to the profile page</a>
         </div>
       </main>
     </div>
