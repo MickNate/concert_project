@@ -12,7 +12,6 @@ export default function Home() {
           <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
             Please be patient as we update the website.
           </p>
-          <a href="/testpage">Here's the link to a test page</a>
         </div>
       </main>
     </div>
