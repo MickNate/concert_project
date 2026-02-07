@@ -1,4 +1,4 @@
-export default function Home(){
+export default function Login(){
 
     return (
         <p>
@@ -8,7 +8,7 @@ export default function Home(){
             <label id="passwordInput">Password: </label>
             <input type="text" id="passwordInput" placeholder="Password here"/><br/>
             const btn = document.createElement('button')
-            
+
         </p>
     );
 }
