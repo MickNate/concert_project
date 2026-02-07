@@ -1,7 +1,7 @@
 export default function Home(){
 
     function loginTest() {
-        return "/login"
+        location.href = "/login";
     }
     return (
         <p>
