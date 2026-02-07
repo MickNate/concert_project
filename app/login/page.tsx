@@ -6,6 +6,7 @@ export default function Home(){
             <input type="text" id="usernameInput" placeholder="Username here"/><br/>
             <label id="passwordInput">Password: </label>
             <input type="text" id="passwordInput" placeholder="Password here"/><br/>
+            <button type="button">Enter</button><br/>
         </p>
     );
 }
