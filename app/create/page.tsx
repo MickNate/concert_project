@@ -8,22 +8,32 @@ export default function Create(){
             </p>
             <p>
                 <form>
+                    <label htmlFor="firstname">First Name:</label><br/>
+                    <input type="text" id="firstname" name="firstname"/><br/>
+                    <label htmlFor="lastname">Username:</label><br/>
+                    <input type="text" id="lastname" name="lastname"/><br/>
                     <label htmlFor="username">Username:</label><br/>
                     <input type="text" id="username" name="username"/><br/>
                     <label htmlFor="password">Password:</label><br/>
                     <input type="text" id="password" name="password"/><br/><br/>
-                    <input type="button" value="Create" onClick={() => saveUser()}/>
+                    <input type="button" value="Create" onClick={() => createUser()}/>
                 </form>
             </p>
         </div>
 
     );
-    function saveUser(){
+
+    function createUser() {
+
         let creButton = document.getElementById("button")
         let creUser = document.getElementById("username")
         let crePass = document.getElementById("password")
-        let fileName = "userList.txt"
+        //let fileName = "userList.txt"
 
+        
+
+
+        /*function saveUser(){
         // @ts-ignore
         let userInp = creUser.value
         // @ts-ignore
@@ -36,6 +46,6 @@ export default function Create(){
         document.body.appendChild(link)
         link.click()
         document.body.removeChild(link)
-        URL.revokeObjectURL(link.href)
+        URL.revokeObjectURL(link.href)*/
     }
 }
