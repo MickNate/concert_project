@@ -10,7 +10,7 @@ export default function Create(){
                     <input type="text" id="username" name="username"/><br/>
                     <label htmlFor="password">Password:</label><br/>
                     <input type="text" id="password" name="password"/><br/><br/>
-                    <input type="create" value="Create"/>
+                    <input type="submit" value="create_profile"/>
                 </form>
             </p>
         </div>
