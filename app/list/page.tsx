@@ -9,7 +9,7 @@ export default function List() {
 
             <script>
                 const users = ["Saab", "Volvo", "BMW"];
-                document.getElementById("demo").innerHTML = users.toString();
+                document.getElementById("demo").innerHTML = users;
             </script>
         </div>
     );
