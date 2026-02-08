@@ -1,7 +1,10 @@
-export default function GuestView(){
+export default async function GuestView( { params }: {
+    params: Promise<{ guestviewId: string}>;
+}){
+    const guestviewID = (await params).guestviewId;
     return (
         <p>
-            This will be the page for guests to view another's profile.
+            This is the guest view of the profile for {guestviewID}.
         </p>
     );
 }
