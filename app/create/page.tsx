@@ -28,7 +28,7 @@ export default function Create(){
             // @ts-ignore
             let passInp = crePass.value
             let blobdtMIME =
-                new Blob([userInp, passInp], { type: "text/plain" })
+                new Blob([userInp, " ", passInp], { type: "text/plain" })
             let url = URL.createObjectURL(blobdtMIME)
             let anele = document.createElement("a")
             anele.href = url;
