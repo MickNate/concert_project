@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs';
 
-export default async function List() {
-    const file = await fs.readFile('userdatabase.txt');
+export default function List() {
+    const file = fs.readFile('userdatabase.txt');
 
     return (
         <div>
