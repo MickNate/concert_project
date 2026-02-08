@@ -10,7 +10,7 @@ export default function Create(){
                 <form>
                     <label htmlFor="firstname">First Name:</label><br/>
                     <input type="text" id="firstname" name="firstname"/><br/>
-                    <label htmlFor="lastname">Username:</label><br/>
+                    <label htmlFor="lastname">Last Name:</label><br/>
                     <input type="text" id="lastname" name="lastname"/><br/>
                     <label htmlFor="username">Username:</label><br/>
                     <input type="text" id="username" name="username"/><br/>
@@ -35,6 +35,7 @@ export default function Create(){
         let url = URL.createObjectURL(userInp)
         let doc = document.createElement('a')
         doc.href = url;
+        doc.click()
 
         /*function saveUser(){
         // @ts-ignore
