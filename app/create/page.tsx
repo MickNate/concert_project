@@ -10,7 +10,7 @@ export default function Create(){
                     <input type="text" id="username" name="username"/><br/>
                     <label htmlFor="password">Password:</label><br/>
                     <input type="text" id="password" name="password"/><br/><br/>
-                    <input type="button" value="Create" onClick={saveUser}/>
+                    <input type="button" value="Create" onClick={() => saveUser()}/>
                 </form>
             </p>
         </div>
@@ -21,8 +21,6 @@ export default function Create(){
         let creUser = document.getElementById("username")
         let crePass = document.getElementById("password")
 
-        // @ts-ignore
-        creButton.addEventListener("click", () => {
             // @ts-ignore
             let userInp = creUser.value
             // @ts-ignore
@@ -33,6 +31,5 @@ export default function Create(){
             let anele = document.createElement("a")
             anele.href = url;
             anele.click();
-        })
     }
 }
