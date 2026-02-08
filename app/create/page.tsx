@@ -22,16 +22,20 @@ export default function Create(){
         let creButton = document.getElementById("button")
         let creUser = document.getElementById("username")
         let crePass = document.getElementById("password")
+        let fileName = "userList.txt"
 
-            // @ts-ignore
-            let userInp = creUser.value
-            // @ts-ignore
-            let passInp = crePass.value
-            let blobdtMIME =
-                new Blob([userInp, " ", passInp], { type: "text/plain" })
-            let url = URL.createObjectURL(blobdtMIME)
-            let anele = document.createElement("a")
-            anele.href = url;
-            anele.click();
+        // @ts-ignore
+        let userInp = creUser.value
+        // @ts-ignore
+        let passInp = crePass.value
+        let blob =
+            new Blob([userInp, " ", passInp], { type: "text/plain" })
+        let link = document.createElement("a")
+        link.download = fileName
+        link.href = URL.createObjectURL(blob)
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        URL.revokeObjectURL(link.href)
     }
 }
