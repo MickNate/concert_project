@@ -5,12 +5,18 @@ export default function List() {
     return(
         <div>
             <h1>User List: </h1>
-            <p id="demo"></p>
 
+            <ul id="userList"></ul>
             <script>
-                const users = ["Saab", "Volvo", "BMW"];
-                document.getElementById("demo").innerHTML = users;
+                let users = ["first", "second", "third"]
+                let list = document.getElementbyId("userList")
+                for (i = 0; i < users.length; ++i){
+                    let li = document.createElement('li')
+                li.innerText = users[i]
+                list.appendChild(li)
+            }
             </script>
+
         </div>
     );
 
