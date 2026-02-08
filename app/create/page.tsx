@@ -32,7 +32,7 @@ export default function Create(){
 
         // @ts-ignore
         let userInp = creUser.value
-        let baseUrl = "https://concert-project.vercel.app/guestview/"
+        let baseUrl = "https://concert-project.vercel.app/profile/guestview/"
 
         let fullUrl = baseUrl.concat(userInp)
 
