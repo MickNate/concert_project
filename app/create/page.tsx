@@ -30,8 +30,11 @@ export default function Create(){
         let crePass = document.getElementById("password")
         //let fileName = "userList.txt"
 
-        
-
+        // @ts-ignore
+        let userInp = creUser.value
+        let url = URL.createObjectURL(userInp)
+        let doc = document.createElement('a')
+        doc.href = url;
 
         /*function saveUser(){
         // @ts-ignore
