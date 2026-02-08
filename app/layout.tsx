@@ -31,6 +31,10 @@ export default function RootLayout({
       <div>
           {" "}
           <Link href={"/home"}> Home </Link>
+          {" "}
+          <Link href={"/ownerview"}> Profile </Link>
+          {" "}
+          <Link href={"/login"}> Login </Link>
       </div>
         {children}
       </body>
