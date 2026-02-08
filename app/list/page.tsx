@@ -1,14 +1,11 @@
 import { promises as fs } from 'fs';
-import path from 'path';
 
 export default async function List() {
-    const filePath = "/userdatabase.txt"; // get file
-    const fileContents = await fs.readFile(filePath, 'utf8'); // Read file as a string
+    const file = await fs.readFile('userdatabase.txt', 'utf8');
 
     return (
         <div>
-            <h1>Current Users are:</h1>
-            <pre>{fileContents}</pre>
+            <h1>{file}</h1>
         </div>
     );
 }
