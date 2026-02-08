@@ -32,10 +32,11 @@ export default function Create(){
 
         // @ts-ignore
         let userInp = creUser.value
-        let url = URL.createObjectURL(userInp)
-        let doc = document.createElement('a')
-        doc.href = url;
-        doc.click()
+        let baseUrl = "https://concert-project.vercel.app/guestview/"
+
+        let fullUrl = baseUrl.concat(userInp)
+
+        window.location.href =fullUrl
 
         /*function saveUser(){
         // @ts-ignore
