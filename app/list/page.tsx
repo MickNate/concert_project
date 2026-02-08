@@ -1,11 +1,13 @@
-import { promises as fs } from 'fs';
-
-export default async function Page() {
-    const file = await fs.readFile(process.cwd() + 'userdatabase.txt', 'utf8');
-
+export default function List() {
+    const users = ["first", "second", "third"]
     return (
         <div>
-            <h1>{file}</h1>
+            <h1>Current Users:</h1>
+            <ul>
+                {users.map((name, index) => (
+                    <li key={index}>{name}</li>
+                ))}
+            </ul>
         </div>
     );
 }
