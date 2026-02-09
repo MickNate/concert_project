@@ -1,3 +1,4 @@
+'client side'
 
 export default function List() {
     //const users = ["first", "second", "third"]
