@@ -2,14 +2,17 @@
 
 export default function List() {
 
+    const reptiles: string[] = ["alligator", "snake", "lizard"];
+
     return(
         <body>
         <h1>User List: </h1>
-        <p>The fruits in this document are:</p>
-        <p id="demo"></p>
-
-        <script src = "createList.js"></script>
-
+        <ul>
+            {reptiles.map((reptile, index) => (
+                // Use a unique key for each item, the index can be used if the list is static
+                <li key={index}>{reptile}</li>
+            ))}
+        </ul>
         </body>
     );
 
