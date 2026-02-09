@@ -4,26 +4,31 @@ export default function List() {
     //const users = ["first", "second", "third"]
     //let leng = users.length
 
-    const fruits = ["Banana", "Orange", "Apple", "Mango"];
-    let text = " <ul>";
-    fruits.forEach(myFunction);
-    text += " </ul>";
-    function myFunction(value: string) {
-        text += "<li>" + value + "</li>";
+    const todos = [
+        { id: 1, text: "clean the house" },
+        { id: 2, text: "buy milk" }
+    ];
+
+    function ListItems(): React.ReactNode {
+        return todos.map((todo) => <li key={todo.id}>{todo.text}</li>);
     }
 
+    //export default ListItems;
+    //@ts-ignore
     return(
-        <div>
+        <body>
             <h1>User List: </h1>
 
-            <p id="demo"></p>
-            <script>
-                document.getElementById("demo").innerHTML = text;
-            </script>
+            <ul>
+                <ListItems/>
+            </ul>
 
 
-        </div>
+        </body>
     );
+
+
+
 
 
 }
