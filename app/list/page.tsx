@@ -3,20 +3,23 @@ export default function List() {
     //const users = ["first", "second", "third"]
     //let leng = users.length
 
+    const fruits = ["Apple", "Banana", "Orange", "Mango"];
+    const container = document.getElementById("array-container");
+
     return(
         <div>
             <h1>User List: </h1>
 
             <ul id="userList"></ul>
+            <div id="array-container"></div>
             <script>
-                const fruits = ["Banana", "Orange", "Apple", "Mango"];
+                const htmlList = `<ul>
+                ${fruits.map(item => `<li>${item}</li>`).join('')}
+            </ul>`;
 
-                let text = "<ul>";
-                fruits.forEach(myFunction);
-                text += "</ul>";
+                // Insert into the DOM
+                container.innerHTML = htmlList;
 
-                function myFunction(value)
-                    text += "<li>" + value + "</li>";
             </script>
 
         </div>
