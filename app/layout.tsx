@@ -29,6 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
       <div>
+          Concert Project
           {" "}
           <Link href={"/home"}> Home </Link>
           {" "}

@@ -7,7 +7,6 @@ export default function Login(){
             <input type="text" id="usernameInput" placeholder="Username here"/><br/>
             <label id="passwordInput">Password: </label>
             <input type="text" id="passwordInput" placeholder="Password here"/><br/>
-            const btn = document.createElement('button')
 
         </p>
     );
