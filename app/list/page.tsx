@@ -1,3 +1,4 @@
+
 export default function List() {
     //const users = ["first", "second", "third"]
     //let leng = users.length
@@ -8,16 +9,22 @@ export default function List() {
 
             <ul id="userList"></ul>
             <script>
-                let users = ["first", "second", "third"]
-                let list = document.getElementbyId("userList")
-                for (i = 0; i < users.length; ++i){
-                    let li = document.createElement('li')
-                li.innerText = users[i]
-                list.appendChild(li)
-            }
+                const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+                let text = "<ul>";
+                fruits.forEach(myFunction);
+                text += "</ul>";
+
+                function myFunction(value)
+                    text += "<li>" + value + "</li>";
             </script>
 
         </div>
     );
+
+    function createList(){
+        return 'a'
+    }
+
 
 }
