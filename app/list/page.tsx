@@ -14,11 +14,7 @@ export default function List() {
             <h1>User List: </h1>
 
             <p id="demo"></p>
-
-            <script>
-                document.getElementById("demo").innerHTML = text;
-
-            </script>
+            document.getElementById("demo").innerHTML = text;
 
         </div>
     );
