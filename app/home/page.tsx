@@ -5,12 +5,10 @@ export default function Home(){
             <p>Welcome to Concert Project!</p>
             <p>Are you a returning user or a new user?</p>
 
-            <form action="C:\Users\unkno\OpenSourceWebTech\concert_project\app\create\page.tsx">
-                <input type="submit" value="New User"/>
-            </form>
-            <form action="C:\Users\unkno\OpenSourceWebTech\concert_project\app\login\page.tsx">
-                <input type="submit" value="Returning User"/>
-            </form>
+            <a href="../create">
+                <button>New User</button>
+            </a>
+
         </div>
     );
 }
