@@ -1,11 +1,12 @@
 export default function Home(){
 
     return (
-        <p>
-            Welcome to Concert Project! <b/>
-            <b/>
-            Are you a returning user or a new user?<b/>
+        <div>
+            <p>Welcome to Concert Project!</p>
+            <p>Are you a returning user or a new user?</p>
 
-        </p>
+            <a href="C:\Users\unkno\OpenSourceWebTech\concert_project\app\create\page.tsx" className="button">Create</a>
+            <a href="C:\Users\unkno\OpenSourceWebTech\concert_project\app\login\page.tsx" className="button">Login</a>
+        </div>
     );
 }

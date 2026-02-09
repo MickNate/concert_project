@@ -3,8 +3,11 @@ export default async function GuestView( { params }: {
 }){
     const guestviewID = (await params).guestviewId;
     return (
-        <p>
-            This is the guest view of the profile for {guestviewID}.
-        </p>
+        <div>
+            <p>
+                This is the guest view of the profile for {guestviewID}.
+            </p>
+
+        </div>
     );
 }
