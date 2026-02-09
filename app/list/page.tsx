@@ -20,7 +20,7 @@ export default function List() {
 
     function getLink(user:string){
         let fullUrl = baseUrl.concat(user)
-        return "<a href = " + fullUrl + "></a>"
+        return "<a href = " + fullUrl + ">{user" + "}</a>"
     }
 
 
