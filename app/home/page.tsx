@@ -8,6 +8,9 @@ export default function Home(){
             <a href="../create">
                 <button>New User</button>
             </a>
+            <a href="../login">
+                <button>Returning User</button>
+            </a>
 
         </div>
     );
