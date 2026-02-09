@@ -1,6 +1,6 @@
 'client side'
 
-export default function List() {
+export async function List() {
     //const users = ["first", "second", "third"]
     //let leng = users.length
 
