@@ -12,7 +12,7 @@ export default function List() {
         <ul>
             {users.map((user, index) => (
                 // Use a unique key for each item, the index can be used if the list is static
-                <li key={index}>{getLink(user)}</li>
+                <li key={index}><a href = {getLink(user)}>{user}</a></li>
             ))}
         </ul>
         </body>
@@ -20,7 +20,7 @@ export default function List() {
 
     function getLink(user:string){
         let fullUrl = baseUrl.concat(user)
-        return '<a href = "' + fullUrl + '">{user' + '}</a>'
+        return fullUrl
     }
 
 
