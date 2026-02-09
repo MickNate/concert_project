@@ -1,32 +1,30 @@
-'client side'
 
-export async function List() {
+
+export default function List() {
     //const users = ["first", "second", "third"]
     //let leng = users.length
 
-    const fruits = ["Apple", "Banana", "Orange", "Mango"];
-    const container = document.getElementById("array-container");
-    const htmlList = `<ul>
-                ${fruits.map(item => `<li>${item}</li>`).join('')}
-            </ul>`;
-
-    // Insert into the DOM
-    // @ts-ignore
-    container.innerHTML = htmlList;
-
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let text = " <ul>";
+    fruits.forEach(myFunction);
+    text += " </ul>";
 
     return(
         <div>
             <h1>User List: </h1>
 
-            <ul id="userList"></ul>
-            <div id="array-container"></div>
+            <p id="demo"></p>
+
+            <script>
+                document.getElementById("demo").innerHTML = text;
+
+            </script>
 
         </div>
     );
 
-    function createList(){
-        return 'a'
+    function myFunction(value: string) {
+        text += "<li>" + value + "</li>";
     }
 
 
