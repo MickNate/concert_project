@@ -8,20 +8,22 @@ export default function List() {
     let text = " <ul>";
     fruits.forEach(myFunction);
     text += " </ul>";
+    function myFunction(value: string) {
+        text += "<li>" + value + "</li>";
+    }
 
     return(
         <div>
             <h1>User List: </h1>
 
             <p id="demo"></p>
-            document.getElementById("demo").innerHTML = text;
+            <script>
+                document.getElementById("demo").innerHTML = text;
+            </script>
+
 
         </div>
     );
-
-    function myFunction(value: string) {
-        text += "<li>" + value + "</li>";
-    }
 
 
 }
