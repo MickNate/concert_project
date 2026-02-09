@@ -1,6 +1,10 @@
-const elements = document.getElementsByTagName("*");
-let text = "";
-for (let i = 0; i < elements.length; i++) {
-    text += elements[i].tagName + "<br>";
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fLen = fruits.length;
+
+let text = "<ul>";
+for (let i = 0; i < fLen; i++) {
+    text += "<li>" + fruits[i] + "</li>";
 }
+text += "</ul>";
+
 document.getElementById("demo").innerHTML = text;
