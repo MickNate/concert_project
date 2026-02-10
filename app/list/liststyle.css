@@ -6,9 +6,9 @@
     background-color: #333333;
 }
 
-#userList ul li {
+/*#userList ul li {
     float: left;
-}
+}*/
 
 #userList ul li a {
     display: block;
