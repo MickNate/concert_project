@@ -10,7 +10,7 @@
     float: left;
 }*/
 
-#userList ul li a {
+#userList li a {
     display: block;
     color: white;
     text-align: center;
