@@ -1,4 +1,4 @@
-
+import "./liststyle.css";
 
 export default function List() {
 
