@@ -31,13 +31,12 @@ export default function RootLayout({
       <div>
           Concert Project
           {" "}
-          <Link href={"/home"}> Home </Link>
-          {" "}
-          <Link href={"/profile/ownerview"}> Profile </Link>
-          {" "}
-          <Link href={"/login"}> Login </Link>
-          {" "}
-          <Link href={"/list"}> Members </Link>
+          <ul>
+              <li><Link href={"/home"}> Home </Link></li>
+              <li><Link href={"/profile/ownerview"}> Profile </Link></li>
+              <li><Link href={"/login"}> Login </Link></li>
+              <li><Link href={"/list"}> Members </Link></li>
+          </ul>
       </div>
         {children}
       </body>

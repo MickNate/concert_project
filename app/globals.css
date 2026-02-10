@@ -1,9 +1,21 @@
-.header {
-  padding: 60px;
-  text-align: center;
-  background: #1abc9c;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
   color: white;
-  font-size: 30px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 body {
