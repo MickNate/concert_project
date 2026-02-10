@@ -8,6 +8,7 @@ ul {
 
 ul li {
   float: left;
+  color: white;
 }
 
 ul li a {
