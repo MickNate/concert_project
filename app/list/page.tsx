@@ -14,7 +14,7 @@ export default function List() {
                 // Use a unique key for each item, the index can be used if the list is static
                 <p>
                     <li key={index}><a href={getLink(user)}>{user}</a></li>
-                    <br/></p>
+                </p>
             ))}
         </ul>
         </body>
