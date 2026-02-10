@@ -12,9 +12,7 @@ export default function List() {
         <ul id="userList">
             {users.map((user, index) => (
                 // Use a unique key for each item, the index can be used if the list is static
-                <p>
                     <li key={index}><a href={getLink(user)}>{user}</a></li>
-                </p>
             ))}
         </ul>
         </body>
