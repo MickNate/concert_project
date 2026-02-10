@@ -13,7 +13,7 @@ ul li {
 ul li a {
   display: block;
   color: white;
-  text-align: center;
+  text-align: right;
   padding: 14px 16px;
   text-decoration: none;
 }
