@@ -11,10 +11,13 @@ export default async function Test() {
     // Parse the JSON string into a JavaScript object
     const data = JSON.parse(fileData);
 
+    let farts = "poop"
+
     return (
         <div>
             <h1>Name: {data.username}</h1>
             <p>Info: {data.info}</p>
+            <p>{farts}</p>
             {/* Display the data as needed */}
         </div>
     );
