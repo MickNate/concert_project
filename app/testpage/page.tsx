@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs';
 
 export default async function Test(){
-    const file = await fs.readFile(process.cwd() + 'C:\\Users\\unkno\\OpenSourceWebTech\\concert_project\\member_list.json', 'utf8');
+    const file = await fs.readFile(process.cwd() + '../member_list.json', 'utf8');
     const data = JSON.parse(file);
 
     return (
