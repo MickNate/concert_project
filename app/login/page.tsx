@@ -3,11 +3,13 @@ export default function Login(){
     return (
         <p>
             Welcome back to Concert Project! Please login below.<br/>
-            <label id="usernameInput">Username: </label>
-            <input type="text" id="usernameInput" placeholder="Username here"/><br/>
-            <label id="passwordInput">Password: </label>
-            <input type="text" id="passwordInput" placeholder="Password here"/><br/>
-            <input type="button" value="Login" onClick={() => loginUser()}/>
+            <form>
+                <label id="usernameInput">Username: </label>
+                <input type="text" id="usernameInput" placeholder="Username here"/><br/>
+                <label id="passwordInput">Password: </label>
+                <input type="text" id="passwordInput" placeholder="Password here"/><br/>
+                <input type="button" value="Login" onClick={() => loginUser()}/>
+            </form>
         </p>
     );
 
