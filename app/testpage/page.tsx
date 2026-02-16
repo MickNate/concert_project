@@ -3,7 +3,7 @@ import path from 'path'; // The 'path' module helps construct reliable file path
 
 export default async function Test() {
     // Construct the absolute path to your file
-    const filePath = path.join(process.cwd(), 'src/data', 'member_list.json');
+    const filePath = path.join(process.cwd(), 'member_list.json');
 
     // Read the file content
     const fileData = await fs.readFile(filePath, 'utf8');
