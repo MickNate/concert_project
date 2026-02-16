@@ -13,8 +13,8 @@ export default async function Test() {
 
     return (
         <div>
-            <h1>Data:</h1>
-            <p>Name: {data.username}</p>
+            <h1>Name: {data.username}</h1>
+            <p>Info: {data.info}</p>
             {/* Display the data as needed */}
         </div>
     );
