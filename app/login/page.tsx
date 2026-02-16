@@ -15,7 +15,7 @@ export default function Login(){
 
     function loginUser() {
 
-        let logUser = document.getElementById("username")
+        let logUser = document.getElementById("usernameInput")
 
         // @ts-ignore
         let userInp = logUser.value
