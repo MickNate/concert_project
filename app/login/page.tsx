@@ -2,12 +2,8 @@
 
 export default async function Login(){
 
-
-    let hostData  = await fetch(`member_list.json`)
-    //use string literals
-    let hostJson = await hostData.json();
-    //now you can directly use jsonData
-    let data = JSON.parse(hostJson);
+    let myObject = await fetch("member_list");
+    let data = await myObject.json();
 
     return (
         <div>
