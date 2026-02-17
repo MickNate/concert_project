@@ -15,6 +15,9 @@ export default async function GuestView( { params }: {
             <p>
                 This is the guest view of the profile for {user.username}.
             </p>
+            <p>
+                {user.info}
+            </p>
 
         </div>
     );
