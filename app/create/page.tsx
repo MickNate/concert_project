@@ -23,22 +23,22 @@ export default function Create(){
 
     function createUser() {
 
-        alert("Good job")
-        /*let creUser = document.getElementById("username")
+        let creUser = document.getElementById("username")
         let crePass = document.getElementById("password")
         let verPass = document.getElementById("verpassword")
 
         // @ts-ignore
         if(crePass.innerHTML == verPass.innerHTML){
             // @ts-ignore
-            let userInp = creUser.value
+            /*let userInp = creUser.value
             let baseUrl = "https://concert-project.vercel.app/profile/ownerview/"
             let fullUrl = baseUrl.concat(userInp)
 
-            window.location.href=fullUrl
+            window.location.href=fullUrl*/
+            alert("Good job")
         }
         else{
             alert("Passwords do not match")
-        }*/
+        }
     }
 }
