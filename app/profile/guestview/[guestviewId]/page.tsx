@@ -18,7 +18,7 @@ export default async function GuestView( { params }: {
             <p>
                 {user.info}
             </p>
-            <p>{user.concerts}</p>
+            <p>{user.concerts.headliner}</p>
 
         </div>
     );
