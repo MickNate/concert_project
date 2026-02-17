@@ -2,7 +2,7 @@
 
 export default async function Login(){
 
-    const response = await fetch("https://github.com/MickNate/concert_project/blob/8c776e252258c85a8e1a3e1e64f71210cdbba79d/member_list.json");
+    const response = await fetch("member_list");
     const data = await response.json();
 
     return (
