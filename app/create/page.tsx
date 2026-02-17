@@ -27,7 +27,7 @@ export default function Create(){
         let crePass = document.getElementById("password")
         let verPass = document.getElementById("verpassword")
 
-        if(crePass != verPass){
+        if(crePass !== verPass){
             alert("Passwords do not match")
         }
         else{
