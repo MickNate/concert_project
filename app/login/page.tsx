@@ -1,11 +1,13 @@
 'use client';
 
-import { promises as fs } from 'fs';
-
 export default async function Login(){
 
-    const file = await fs.readFile('member_list.json', 'utf8');
-    const data = JSON.parse(file);
+
+    let hostData  = await fetch(`member_list.json`)
+    //use string literals
+    let hostJson = await hostData.json();
+    //now you can directly use jsonData
+    let data = JSON.parse(hostJson);
 
     return (
         <div>
@@ -23,6 +25,8 @@ export default async function Login(){
             </p>
         </div>
     );
+
+
 
     function loginUser() {
 
