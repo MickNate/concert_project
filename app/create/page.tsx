@@ -34,7 +34,8 @@ export default function Create(){
             let baseUrl = "https://concert-project.vercel.app/profile/ownerview/"
             let fullUrl = baseUrl.concat(userInp)
 
-            window.location.href=fullUrl
+            //window.location.href=fullUrl
+            alert("Passwords do match. This will direct to a new user page once backend added")
         }
         else{
             alert("Passwords do not match")
