@@ -23,6 +23,7 @@ export default async function List() {
 
     function getLink(user:Key){
         let stringURL = JSON.stringify(user)
+        stringURL = stringURL.replace(/"/g, "");
         let baseUrl = "https://concert-project.vercel.app/profile/guestview/"
         let fullUrl = baseUrl.concat(stringURL)
         return fullUrl
