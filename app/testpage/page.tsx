@@ -17,7 +17,7 @@ export default async function Test() {
     );
 
     async function getData(){
-        const res = await fetch("member_list.json");
+        const res = await fetch("./member_list.json");
         const data = await res.json()
 
         return data
