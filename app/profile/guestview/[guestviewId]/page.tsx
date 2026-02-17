@@ -12,13 +12,13 @@ export default async function GuestView( { params }: {
 
     return (
         <div>
+            <h1>
+                User: {user.username}.
+            </h1>
             <p>
-                This is the guest view of the profile for {user.username}.
+                Bio: {user.info}
             </p>
-            <p>
-                {user.info}
-            </p>
-            <p>{user.concerts[0].headliner}</p>
+            <p>Concert: {user.concerts[0].headliner}</p>
 
         </div>
     );
