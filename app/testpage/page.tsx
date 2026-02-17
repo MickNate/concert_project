@@ -1,24 +1,25 @@
 import { promises as fs } from 'fs';
-import path from 'path'; // The 'path' module helps construct reliable file paths
+import path from 'path';
 
 export default async function Test() {
-    // Construct the absolute path to your file
-    const filePath = path.join(process.cwd(), 'member_list.json');
+    const usernames = await getData();
+    const userNamesU = document.querySelector("#usernames");
 
-    // Read the file content
-    const fileData = await fs.readFile(filePath, 'utf8');
-
-    // Parse the JSON string into a JavaScript object
-    const data = JSON.parse(fileData);
-
-    let farts = "poop"
+    for (const user of usernames){
+        // @ts-ignore
+        userNamesU.innerHTML += '<li>${user.username}</li>'
+    }
 
     return (
-        <div>
-            <h1>Name: {data.username}</h1>
-            <p>Info: {data.info}</p>
-            <p>{farts}</p>
-            {/* Display the data as needed */}
-        </div>
+        <ul id="usernames">
+
+        </ul>
     );
+
+    async function getData(){
+        const res = await fetch("member_list.json");
+        const data = await res.json()
+
+        return data
+    }
 }
