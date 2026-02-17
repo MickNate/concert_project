@@ -1,4 +1,4 @@
-import { promises as fs } from 'fs';
+/*import { promises as fs } from 'fs';
 
 export default async function Check(){
 
@@ -36,5 +36,4 @@ export default async function Check(){
             <p>{temp}</p>
             <a href={templink}>{temp2}</a>
         </div>
-    );
-}
+    );*/
