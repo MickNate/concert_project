@@ -1,4 +1,5 @@
 import { promises as fs } from 'fs';
+import "./guestview.css";
 
 export default async function GuestView( { params }: {
     params: Promise<{ guestviewId: string}>;
