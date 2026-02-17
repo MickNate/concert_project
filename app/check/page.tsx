@@ -2,8 +2,11 @@ import { promises as fs } from 'fs';
 
 export default async function Check(){
 
-    let logUser = localStorage.getItem('usertemp')
-    let logPass = localStorage.getItem('userpass')
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const logUser = urlParams.get('user')
+    const logPass = urlParams.get('pass')
 
     const file = await fs.readFile('member_list.json', 'utf8');
     const data = JSON.parse(file);

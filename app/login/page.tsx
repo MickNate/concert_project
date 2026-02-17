@@ -27,14 +27,8 @@ export default async function Login(){
         let logPass = document.getElementById("passwordInput")
 
         if((logUser != null) && (logPass != null)){
-            // @ts-ignore
-            localStorage.setItem("usertemp",logUser.innerHTML)
-            localStorage.setItem("userpass",logPass.innerHTML)
-            /*let userInp = logUser.innerHTML
-            let baseUrl = "https://concert-project.vercel.app/profile/ownerview/"
-            let fullUrl = baseUrl.concat(userInp)
-            window.location.href = fullUrl*/
-            window.location.href = "https://concert-project.vercel.app/check"
+            const baseUrl = "https://concert-project.vercel.app/check?"
+            window.location.href = baseUrl.concat("user=",logUser.innerHTML,"&pass=",logPass.innerHTML)
         }
     }
 }
