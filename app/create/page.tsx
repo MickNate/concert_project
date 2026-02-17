@@ -31,7 +31,7 @@ export default function Create(){
         if(crePass.innerHTML == verPass.innerHTML){
             // @ts-ignore
             let userInp = creUser.value
-            let baseUrl = "https://concert-project.vercel.app/profile/guestview/"
+            let baseUrl = "https://concert-project.vercel.app/profile/ownerview/"
             let fullUrl = baseUrl.concat(userInp)
 
             window.location.href =fullUrl
