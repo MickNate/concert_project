@@ -5,7 +5,7 @@ export default async function OwnerView( { params }: {
 }){
     const ownerviewID = (await params).ownerviewId;
 
-    const file = await fs.readFile('app/member_list.json', 'utf8');
+    const file = await fs.readFile('member_list.json', 'utf8');
     const data = JSON.parse(file);
 
     let user = data.find((item: { name: string; }) => item.name === ownerviewID)

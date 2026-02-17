@@ -2,7 +2,7 @@
 
 export default async function Login(){
 
-    const response = await fetch("http://localhost:3000/app/member_list.json");
+    const response = await fetch("http://localhost:3000/member_list.json");
     const data = await response.json();
 
     return (

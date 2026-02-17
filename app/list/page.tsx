@@ -5,7 +5,7 @@ import path from 'path';
 import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from 'react';
 
 export default async function List() {
-    const file = await fs.readFile('app/member_list.json', 'utf8');
+    const file = await fs.readFile('member_list.json', 'utf8');
     const data = JSON.parse(file);
 
     return (
