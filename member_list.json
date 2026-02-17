@@ -1,6 +1,7 @@
 [{
   "id": "001",
   "username": "first",
+  "password": "pass1",
   "info": "Hey my name is First",
   "concerts": [
     {
@@ -26,6 +27,7 @@
   {
     "id": "002",
     "username": "second",
+    "password": "pass2",
     "info": "Sup my name is Second",
     "concerts": [
       {
@@ -39,6 +41,7 @@
   {
     "id": "003",
     "username": "third",
+    "password": "pass3",
     "info": "Hello I am Third",
     "concert": []
   }]
