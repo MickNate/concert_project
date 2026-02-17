@@ -11,7 +11,7 @@ export default async function List() {
     return (
         <div>
             <h1>User List</h1>
-            <ul>
+            <ul id={"userList"}>
                 {data.map((item: { id: Key | null | undefined; username: Key; }) => (
                     <li key={item.id}>
                         <a href={getLink(item.username)}>{item.username}</a>
