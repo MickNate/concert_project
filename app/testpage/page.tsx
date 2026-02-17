@@ -8,10 +8,11 @@ export default async function Test() {
 
     return (
         <div>
-            <h1>Data from JSON File (Server)</h1>
+            <h1>User List</h1>
             <ul>
                 {data.map((item: { username: Key | null | undefined; info: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; }) => (
                     <li key={item.username}>
+                        <h1>{item.username}</h1>
                         <h2>{item.info}</h2>
                     </li>
                 ))}
