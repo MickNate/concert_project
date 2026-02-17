@@ -8,14 +8,12 @@ export default function Create(){
             </p>
             <p>
                 <form>
-                    <label htmlFor="firstname">First Name:</label><br/>
-                    <input type="text" id="firstname" name="firstname"/><br/>
-                    <label htmlFor="lastname">Last Name:</label><br/>
-                    <input type="text" id="lastname" name="lastname"/><br/>
                     <label htmlFor="username">Username:</label><br/>
                     <input type="text" id="username" name="username"/><br/>
                     <label htmlFor="password">Password:</label><br/>
                     <input type="text" id="password" name="password"/><br/><br/>
+                    <label htmlFor="verpassword">Verify Password:</label><br/>
+                    <input type="text" id="verpassword" name="verpassword"/><br/><br/>
                     <input type="button" value="Create" onClick={() => createUser()}/>
                 </form>
             </p>
@@ -25,32 +23,20 @@ export default function Create(){
 
     function createUser() {
 
-        let creButton = document.getElementById("button")
         let creUser = document.getElementById("username")
         let crePass = document.getElementById("password")
-        //let fileName = "userList.txt"
+        let verPass = document.getElementById("verpassword")
 
-        // @ts-ignore
-        let userInp = creUser.value
-        let baseUrl = "https://concert-project.vercel.app/profile/guestview/"
+        if(crePass != verPass){
+            alert("Passwords do not match")
+        }
+        else{
+            // @ts-ignore
+            let userInp = creUser.value
+            let baseUrl = "https://concert-project.vercel.app/profile/guestview/"
+            let fullUrl = baseUrl.concat(userInp)
 
-        let fullUrl = baseUrl.concat(userInp)
-
-        window.location.href =fullUrl
-
-        /*function saveUser(){
-        // @ts-ignore
-        let userInp = creUser.value
-        // @ts-ignore
-        let passInp = crePass.value
-        let blob =
-            new Blob([userInp, " ", passInp], { type: "text/plain" })
-        let link = document.createElement("a")
-        link.download = fileName
-        link.href = URL.createObjectURL(blob)
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
-        URL.revokeObjectURL(link.href)*/
+            window.location.href =fullUrl
+        }
     }
 }
