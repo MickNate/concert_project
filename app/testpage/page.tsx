@@ -7,8 +7,8 @@ export default async function Test() {
 
     return (
         <div>
-            <h1>{data.username}</h1>
-            <p>{data.info}</p>
+            <h1>Username: {data.username}</h1>
+            <p>Info: {data.info}</p>
         </div>
     );
 }
