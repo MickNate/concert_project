@@ -2,24 +2,13 @@ import { promises as fs } from 'fs';
 import path from 'path';
 
 export default async function Test() {
-    const usernames = await getData();
-    const userNamesU = document.querySelector("#usernames");
-
-    for (const user of usernames){
-        // @ts-ignore
-        userNamesU.innerHTML += '<li>${user.username}</li>'
-    }
+    const file = await fs.readFile(process.cwd() + '../member_list.json', 'utf8');
+    const data = JSON.parse(file);
 
     return (
-        <ul id="usernames">
-
-        </ul>
+        <div>
+            <h1>{data.username}</h1>
+            <p>{data.info}</p>
+        </div>
     );
-
-    async function getData(){
-        const res = await fetch("../member_list.json");
-        const data = await res.json()
-
-        return data
-    }
 }
