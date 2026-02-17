@@ -25,7 +25,6 @@ export default async function GuestView( { params }: {
                 <li><p>Date: {user.concerts[0].date}</p></li>
             </ul>
 
-
         </div>
     );
 }

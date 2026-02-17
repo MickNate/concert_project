@@ -8,19 +8,19 @@
       "headliner": "The Summer Set",
       "tourname": "Meet Me At The Record Tour",
       "venue": "The Beacham",
-      "Date": "March 5, 2025"
+      "date": "March 5, 2025"
     },
     {
       "headliner": "I See Stars",
       "tourname": "Spin the Wheel",
       "venue": "The Beacham",
-      "Date": "March 13, 2025"
+      "date": "March 13, 2025"
     },
     {
       "headliner": "Twice",
       "tourname": "This Is For",
       "venue": "Kia Center",
-      "Date": "March 28, 2025"
+      "date": "March 28, 2025"
     }
   ]
 },
@@ -34,7 +34,7 @@
         "headliner": "Hanabie",
         "tourname": "2026 North America Tour",
         "venue": "House of Blues Orlando",
-        "Date": "March 25, 2025"
+        "date": "March 25, 2025"
       }
       ]
   },
@@ -43,5 +43,12 @@
     "username": "third",
     "password": "pass3",
     "info": "Hello I am Third",
-    "concert": []
+    "concert": [
+      {
+        "headliner": "",
+        "tourname": "",
+        "venue": "",
+        "date": ""
+      }
+    ]
   }]
