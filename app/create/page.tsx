@@ -11,7 +11,7 @@ export default function Create(){
                     <label htmlFor="username">Username:</label><br/>
                     <input type="text" id="username" name="username"/><br/>
                     <label htmlFor="password">Password:</label><br/>
-                    <input type="text" id="password" name="password"/><br/><br/>
+                    <input type="text" id="password" name="password"/><br/>
                     <label htmlFor="verpassword">Verify Password:</label><br/>
                     <input type="text" id="verpassword" name="verpassword"/><br/><br/>
                     <input type="button" value="Create" onClick={() => createUser()}/>
