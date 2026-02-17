@@ -12,7 +12,7 @@ export default async function List() {
 
     return (
         <div>
-            {total}
+            {data}
             <h1>User List</h1>
             <ul>
                 {data.map((item: { username: Key | null | undefined; info: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; }) => (
