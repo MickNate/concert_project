@@ -2,7 +2,7 @@
 
 export default async function Login(){
 
-    let myObject = await fetch("member_list");
+    let myObject = await fetch("member_list.json");
     let data = await myObject.json();
 
     return (
