@@ -27,16 +27,16 @@ export default function Create(){
         let crePass = document.getElementById("password")
         let verPass = document.getElementById("verpassword")
 
-        if(crePass !== verPass){
-            alert("Passwords do not match")
-        }
-        else{
+        if(crePass === verPass){
             // @ts-ignore
             let userInp = creUser.value
             let baseUrl = "https://concert-project.vercel.app/profile/guestview/"
             let fullUrl = baseUrl.concat(userInp)
 
             window.location.href =fullUrl
+        }
+        else{
+            alert("Passwords do not match")
         }
     }
 }
