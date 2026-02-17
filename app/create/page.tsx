@@ -30,12 +30,11 @@ export default function Create(){
         // @ts-ignore
         if(crePass.innerHTML == verPass.innerHTML){
             // @ts-ignore
-            /*let userInp = creUser.value
+            let userInp = creUser.value
             let baseUrl = "https://concert-project.vercel.app/profile/guestview/"
             let fullUrl = baseUrl.concat(userInp)
 
-            window.location.href =fullUrl*/
-            alert("Passwords do match")
+            window.location.href =fullUrl
         }
         else{
             alert("Passwords do not match")
