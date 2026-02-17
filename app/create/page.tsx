@@ -27,7 +27,7 @@ export default function Create(){
         let crePass = document.getElementById("password")
         let verPass = document.getElementById("verpassword")
 
-        if(crePass == verPass){
+        if(crePass == crePass){
             // @ts-ignore
             /*let userInp = creUser.value
             let baseUrl = "https://concert-project.vercel.app/profile/guestview/"
