@@ -1,16 +1,31 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient, QueryResult, QueryData, QueryError } from '@supabase/supabase-js'
 
 export default async function Notes(){
 
-// @ts-ignore
+// @ts-expect-error May not work
     const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_ANON_KEY)
 
-    const { data, error } = await supabase
-    .from('todos')
-    .select()
+    const usersQuery = supabase.from("concert_users").select();
+    type Users = QueryData<typeof usersQuery>;
 
-    const { data: notes } = await supabase.from("username").select();
+    const { data, error } = await usersQuery;
+    if (error) throw error;
+    const users: Users = data;
 
-    return <pre>{JSON.stringify(notes, null, 2)}</pre>
+    return (
+        <body>
+            <div>
+                <ul>
+                    {users.map((user) => (
+                        <li key={user.id}>
+                            <h2>{user.username}</h2>
+                            <p>{user.password}</p>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </body>
+    );
+
 
 }
