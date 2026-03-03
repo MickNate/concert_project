@@ -1,9 +1,12 @@
-// @ts-expect-error because this is first time
-import { createClient } from '@/utils/supabase/server';
+import { createClient } from '@supabase/supabase-js'
 
-export default async function Notes() {
-    const supabase = await createClient();
-    const { data: notes } = await supabase.from("notes").select();
+export default async function Notes(){
 
-    return <pre>{JSON.stringify(notes, null, 2)}</pre>
+// @ts-ignore
+    const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_ANON_KEY)
+
+const { data, error } = await supabase
+    .from('todos')
+    .select()
+
 }
