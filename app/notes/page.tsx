@@ -9,7 +9,7 @@ export default async function Notes(){
     .from('todos')
     .select()
 
-    const { data: notes } = await supabase.from("notes").select();
+    const { data: notes } = await supabase.from("username").select();
 
     return <pre>{JSON.stringify(notes, null, 2)}</pre>
 
