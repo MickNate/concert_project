@@ -10,6 +10,7 @@ export async function Notes() {
     const usersQuery = supabase.from("concert_users").select();
     type Users = QueryData<typeof usersQuery>;
 
+    //this is an update
     const {data, error} = await usersQuery;
     if (error) throw error;
     const users: Users = data;
