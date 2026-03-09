@@ -1,6 +1,6 @@
 import { createClient, QueryResult, QueryData, QueryError } from '@supabase/supabase-js'
 
-export async function Notes() {
+export default async function Notes() {
     
     
     const theURL = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhobHN2ZmdqYWxraG1rcnZheGFhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI1Mjc0MTYsImV4cCI6MjA4ODEwMzQxNn0.Ws_iNziFJfdfvTi5TS9-7paqwysxerLvEcCLo_JXwUw";
