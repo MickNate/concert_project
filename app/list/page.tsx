@@ -1,31 +1,31 @@
 import "./liststyle.css";
-
-import { promises as fs } from 'fs';
-import path from 'path';
-import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from 'react';
+import {Key} from 'react';
+import {createClient} from "@/utils/supabase/server";
 
 export default async function List() {
-    const file = await fs.readFile('member_list.json', 'utf8');
-    const data = JSON.parse(file);
+    const supabase = await createClient();
+    const { data: users } = await supabase.from("concert_users").select('username');
+    const userList = JSON.stringify(users)
 
     return (
         <div>
             <h1>User List</h1>
-            <ul id={"userList"}>
-                {data.map((item: { id: Key | null | undefined; username: Key; }) => (
-                    <li key={item.id}>
-                        <a href={getLink(item.username)}>{item.username}</a>
-                    </li>
-            ))}
-            </ul>
+            {userList}
         </div>
     );
 
     function getLink(user:Key){
         let stringURL = JSON.stringify(user)
         stringURL = stringURL.replace(/"/g, "");
-        let baseUrl = "https://concert-project.vercel.app/profile/guestview/"
-        let fullUrl = baseUrl.concat(stringURL)
-        return fullUrl
+        const baseUrl = "https://concert-project.vercel.app/profile/guestview/"
+        return baseUrl.concat(stringURL)
     }
+
+    //<ul id={"userList"}>
+    //                 {users.map((item: { id: Key | null | undefined; username: Key; }) => (
+    //                     <li key={item.id}>
+    //                         <a href={getLink(item.username)}>{item.username}</a>
+    //                     </li>
+    //  </ul>
+    //             ))}
 }
