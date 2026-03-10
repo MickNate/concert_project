@@ -17,6 +17,16 @@ export default async function GuestView( { params }: {
         )
     }
 
+    const valueExists = Object.values(user).includes(guestviewID);
+
+    if (!valueExists){
+        return(
+            <body>
+            <p>This user does not exist</p>
+            </body>
+        )
+    }
+
     const userKey = user.find(person => person.username === guestviewID)
 
     return (
