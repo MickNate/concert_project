@@ -5,14 +5,36 @@ import {createClient} from "@/utils/supabase/server";
 export default async function List() {
     const supabase = await createClient();
     const { data: users } = await supabase.from("concert_users").select('username');
-    const userList = JSON.stringify(users)
+    //const userList = JSON.stringify(users)
+    if (users != null){
+        return (
+            <div>
+                <h1>User List</h1>
+                <ul id={"userList"}>
+                    {users.map((item: { username: Key; }) => (
+                        <li key={item.username}>
+                            <a href={getLink(item.username)}>{item.username}</a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        );
+    }
 
-    return (
-        <div>
-            <h1>User List</h1>
-            {userList}
-        </div>
-    );
+    if (users == null){
+        return (
+            <div>
+                <h1>User List:</h1>
+                <p>No users currently.</p>
+            </div>
+        )
+    }
+
+
+
+    function createList(user: Key){
+
+    }
 
     function getLink(user:Key){
         let stringURL = JSON.stringify(user)
@@ -22,10 +44,10 @@ export default async function List() {
     }
 
     //<ul id={"userList"}>
-    //                 {users.map((item: { id: Key | null | undefined; username: Key; }) => (
-    //                     <li key={item.id}>
-    //                         <a href={getLink(item.username)}>{item.username}</a>
-    //                     </li>
-    //  </ul>
-    //             ))}
+    //                      {users.map((item: { id: Key | null | undefined; username: Key; }) => (
+    //                          <li key={item.id}>
+    //                              <a href={getLink(item.username)}>{item.username}</a>
+    //                          </li>
+    //                  ))}
+    //     </ul>
 }
