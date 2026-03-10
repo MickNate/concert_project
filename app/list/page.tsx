@@ -31,11 +31,6 @@ export default async function List() {
     }
 
 
-
-    function createList(user: Key){
-
-    }
-
     function getLink(user:Key){
         let stringURL = JSON.stringify(user)
         stringURL = stringURL.replace(/"/g, "");
