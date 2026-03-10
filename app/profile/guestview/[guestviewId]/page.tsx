@@ -1,4 +1,3 @@
-import { promises as fs } from 'fs';
 import "./guestview.css";
 import {createClient} from "@/utils/supabase/server";
 
