@@ -1,4 +1,6 @@
 'use client';
+import {Key} from 'react';
+import {createClient} from "@/utils/supabase/server";
 
 export default function Create(){
     return (
@@ -14,31 +16,37 @@ export default function Create(){
                     <input type="text" id="password" name="password"/><br/>
                     <label htmlFor="verpassword">Verify Password:</label><br/>
                     <input type="text" id="verpassword" name="verpassword"/><br/><br/>
-                    <input type="button" value="Create" onClick={() => createUser()}/>
+                    <input type="button" value="Create" onClick={() => testInput()}/>
                 </form>
             </p>
         </div>
 
     );
 
-    function createUser() {
-
-        let creUser = document.getElementById("username")
-        let crePass = document.getElementById("password")
-        let verPass = document.getElementById("verpassword")
-
-        // @ts-ignore
-        if(crePass.value == verPass.value){
-            // @ts-ignore
-            let userInp = creUser.value
-            let baseUrl = "https://concert-project.vercel.app/profile/ownerview/"
-            let fullUrl = baseUrl.concat(userInp)
-
-            //window.location.href=fullUrl
-            alert("Passwords do match. This will direct to a new user page once backend added")
+    async function testInput(){
+        const creUser = document.getElementById("username")
+        const crePass = document.getElementById("password")
+        const verPass = document.getElementById("verpassword")
+        if((creUser != null) && (crePass != null) && (verPass != null)){
+            if(crePass == verPass)
+                await createUser(creUser.innerText,crePass.innerText);
+            else{
+                alert("Passwords do not match")
+            }
         }
-        else{
-            alert("Passwords do not match")
-        }
+        else
+            alert("Please make sure no boxes are blank.")
+    }
+
+    async function createUser(newUser: string, newPass: string) {
+
+        const supabase = await createClient();
+
+        const { error } = await supabase
+            .from('concert_users')
+            .insert({ username: newUser, password: newPass, bio_char: " "})
+
+        window.location.href = "https://concert-project.vercel.app/profile/ownerview/" + newUser;
+
     }
 }
