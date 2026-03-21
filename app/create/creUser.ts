@@ -13,7 +13,10 @@ export async function creUser(previousState: string, formData: FormData){
             const { error } = await supabase
                 .from('concert_users')
                 .insert({ username: username , password: password, bio_info: "Tell everyone about yourself!" })
-            return "User created";
+            if (error)
+                return "Unable to create user";
+            else
+                return "User created";
             //window.location.href = "https://concert-project.vercel.app/profile/ownerview/" + username;
         }
         else{
