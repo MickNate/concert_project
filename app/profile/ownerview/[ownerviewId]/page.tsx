@@ -1,21 +1,47 @@
 import { promises as fs } from 'fs';
+import {createClient} from "@/utils/supabase/server";
 
 export default async function OwnerView( { params }: {
     params: Promise<{ ownerviewId: string}>;
 }){
     const ownerviewID = (await params).ownerviewId;
 
-    const file = await fs.readFile('member_list.json', 'utf8');
-    const data = JSON.parse(file);
+    const supabase = await createClient();
+    const { data: user } = await supabase.from("concert_users").select();
 
-    let user = data.find((item: { name: string; }) => item.name === ownerviewID)
+    if (user == null){
+        return(
+            <body>
+            <p>This user does not exist</p>
+            </body>
+        )
+    }
+
+    const userKey = user.find(person => person.username === ownerviewID)
+
+    if (!userKey){
+        return(
+            <body>
+            <p>This user does not exist</p>
+            </body>
+        )
+    }
 
     return (
-        <div>
+        <body>
+        <div id="desc">
+            <h1>
+                User: {userKey.username}.
+            </h1>
             <p>
-                Welcome back, {user.name}.
+                Bio: {userKey.bio_info}
             </p>
-
         </div>
+        <div id="conc">
+            <ul>
+
+            </ul>
+        </div>
+        </body>
     );
 }

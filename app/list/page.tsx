@@ -37,12 +37,4 @@ export default async function List() {
         const baseUrl = "https://concert-project.vercel.app/profile/guestview/"
         return baseUrl.concat(stringURL)
     }
-
-    //<ul id={"userList"}>
-    //                      {users.map((item: { id: Key | null | undefined; username: Key; }) => (
-    //                          <li key={item.id}>
-    //                              <a href={getLink(item.username)}>{item.username}</a>
-    //                          </li>
-    //                  ))}
-    //     </ul>
 }
