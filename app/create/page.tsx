@@ -1,4 +1,5 @@
 "use client"
+import {creUser} from "@/app/create/creUser";
 import {useActionState} from "react";
 
 export default function Create(){
