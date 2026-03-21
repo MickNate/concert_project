@@ -14,7 +14,7 @@ export async function creUser(previousState: string, formData: FormData){
                 .from('concert_users')
                 .insert({ username: username , password: password, bio_info: "Tell everyone about yourself!" })
             if (error)
-                return "Unable to create user";
+                return "Error: " + error;
             else
                 return "User created";
             //window.location.href = "https://concert-project.vercel.app/profile/ownerview/" + username;
