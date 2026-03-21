@@ -13,8 +13,8 @@ export async function creUser(previousState: string, formData: FormData){
             const { error } = await supabase
                 .from('concert_users')
                 .insert({ username: username , password: password, bio_info: "Tell everyone about yourself!" })
-            window.location.href = "https://concert-project.vercel.app/profile/ownerview/" + username;
-            return "Profile created!";
+            return "User created";
+            //window.location.href = "https://concert-project.vercel.app/profile/ownerview/" + username;
         }
         else{
             return "Error: Passwords do not match";
