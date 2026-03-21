@@ -2,7 +2,6 @@ import {Key} from 'react';
 
 export default function Create(){
     async function testInput(formData: FormData){
-        "use client";
         const username = formData.get("username") as string;
         const password = formData.get("password") as string;
         const verpassword = formData.get("verpassword") as string;
