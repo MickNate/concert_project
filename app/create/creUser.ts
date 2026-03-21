@@ -5,7 +5,7 @@ export async function creUser(previousState: string, formData: FormData){
     const username = formData.get("username") as string;
     const password = formData.get("password") as string;
     const verpassword = formData.get("verpassword") as string;
-    if((username != null) && (password != null) && (verpassword != null)){
+    if((username != "") && (password != "") && (verpassword != "")){
         if(password == verpassword){
             //creUser(username, password)
             return "Error: Passwords do match";
