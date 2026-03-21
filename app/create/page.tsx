@@ -1,34 +1,14 @@
 import {Key} from 'react';
 
-
 export default function Create(){
-    return (
-        <div>
-            <p>
-                Welcome to Concert Project! Please fillout the information below to create your profile.
-            </p>
-            <p>
-                <form>
-                    <label htmlFor="username">Username:</label><br/>
-                    <input type="text" id="username" name="username"/><br/>
-                    <label htmlFor="password">Password:</label><br/>
-                    <input type="text" id="password" name="password"/><br/>
-                    <label htmlFor="verpassword">Verify Password:</label><br/>
-                    <input type="text" id="verpassword" name="verpassword"/><br/><br/>
-                    <input type="button" value="Create" onClick={() => testInput()}/>
-                </form>
-            </p>
-        </div>
-
-    );
-
-    async function testInput(){
-        const creUser = document.getElementById("username")
-        const crePass = document.getElementById("password")
-        const verPass = document.getElementById("verpassword")
-        if((creUser != null) && (crePass != null) && (verPass != null)){
-            if(crePass == verPass){
-                window.location.href = "https://concert-project.vercel.app/profile/ownerview/" + creUser}
+    async function testInput(formData: FormData){
+        "use client";
+        const username = formData.get("username") as string;
+        const password = formData.get("password") as string;
+        const verpassword = formData.get("verpassword") as string;
+        if((password != null) && (verpassword != null)){
+            if(password == verpassword){
+                creUser(username, password)}
             else{
                 alert("Passwords do not match")
             }
@@ -36,5 +16,31 @@ export default function Create(){
         else
             alert("Please make sure no boxes are blank.")
     }
+
+    async function creUser(newname: string, newpass: string){
+        "use server";
+        const username = newname;
+        const password = newpass;
+
+    }
+    return (
+        <div>
+            <p>
+                Welcome to Concert Project! Please fillout the information below to create your profile.
+            </p>
+            <p>
+                <form action={testInput}>
+                    <label htmlFor="username">Username:</label><br/>
+                    <input type="text" id="username" name="username"/><br/>
+                    <label htmlFor="password">Password:</label><br/>
+                    <input type="text" id="password" name="password"/><br/>
+                    <label htmlFor="verpassword">Verify Password:</label><br/>
+                    <input type="text" id="verpassword" name="verpassword"/><br/><br/>
+                    <button type="submit">Create</button>
+                </form>
+            </p>
+        </div>
+
+    );
 
 }
