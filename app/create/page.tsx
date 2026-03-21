@@ -1,4 +1,3 @@
-import {Key} from 'react';
 
 export default function Create(){
     async function testInput(formData: FormData){
@@ -7,7 +6,9 @@ export default function Create(){
         const verpassword = formData.get("verpassword") as string;
         if((password != null) && (verpassword != null)){
             if(password == verpassword){
-                creUser(username, password)}
+                //creUser(username, password)
+                alert("Passwords do match")
+                 }
             else{
                 alert("Passwords do not match")
             }
@@ -16,12 +17,12 @@ export default function Create(){
             alert("Please make sure no boxes are blank.")
     }
 
-    async function creUser(newname: string, newpass: string){
+    /*async function creUser(newname: string, newpass: string){
         "use server";
         const username = newname;
         const password = newpass;
 
-    }
+    }*/
     return (
         <div>
             <p>
