@@ -1,3 +1,5 @@
+"use server";
+
 async function creUser(previousState: string, formData: FormData){
     await new Promise((resolve) => setTimeout(resolve, 2000));
     const username = formData.get("username") as string;
