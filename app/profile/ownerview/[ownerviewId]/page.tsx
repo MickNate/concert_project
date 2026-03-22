@@ -57,14 +57,8 @@ export default async function OwnerView( { params }: {
         <div id="conc">
             <h1>Concert List:</h1>
             <ul id={"concertList"}>
-                {concert.map((item: { user_id: Key; }) => (
-                    <>
-                        <li>item.headliner</li>
-                        <li>item.other_artists</li>
-                        <li>item.tourname</li>
-                        <li>item.date</li>
-                        <li>item.venue</li>
-                    </>
+                {concert.map((item: { user_id: Key; headliner: Key}) => (
+                        <li key ={item.user_id}>{item.headliner}</li>
                 ))}
             </ul>
         </div>
