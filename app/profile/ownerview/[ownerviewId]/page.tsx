@@ -50,9 +50,6 @@ export default async function OwnerView( { params }: {
             <p>
                 Bio: {userKey.bio_info}
             </p>
-            <p>
-                <a href={getLink(userKey.username)}>Edit Profile</a>
-            </p>
         </div>
         <div id="conc">
             <h1>Concert List:</h1>
