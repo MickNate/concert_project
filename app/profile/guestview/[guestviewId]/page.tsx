@@ -1,5 +1,6 @@
 import "./guestview.css";
 import {createClient} from "@/utils/supabase/server";
+import {Key} from "react";
 
 export default async function GuestView( { params }: {
     params: Promise<{ guestviewId: string}>;
@@ -27,6 +28,18 @@ export default async function GuestView( { params }: {
         )
     }
 
+    const { data: concert} = await supabase.from("concert_concerts")
+        .select()
+        .eq('user_id',userKey.user_id)
+
+    if (concert == null){
+        return(
+            <body>
+            <p>No concerts</p>
+            </body>
+        )
+    }
+
     return (
         <body>
         <div id="desc">
@@ -38,8 +51,11 @@ export default async function GuestView( { params }: {
             </p>
         </div>
         <div id="conc">
-            <ul>
-
+            <h1>Concert List:</h1>
+            <ul id={"concertList"}>
+                {concert.map((item: { user_id: Key; headliner: Key}) => (
+                    <li key ={item.user_id}>{item.headliner}</li>
+                ))}
             </ul>
         </div>
         </body>
