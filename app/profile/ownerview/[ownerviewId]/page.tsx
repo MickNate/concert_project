@@ -61,11 +61,4 @@ export default async function OwnerView( { params }: {
         </div>
         </body>
     );
-
-    function getLink(user:Key){
-        let stringURL = JSON.stringify(user)
-        stringURL = stringURL.replace(/"/g, "");
-        const baseUrl = "https://concert-project.vercel.app/profile/editbio/"
-        return baseUrl.concat(stringURL)
-    }
 }
