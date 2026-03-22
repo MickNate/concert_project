@@ -1,5 +1,6 @@
 import { promises as fs } from 'fs';
 import {createClient} from "@/utils/supabase/server";
+import {Key} from "react";
 
 export default async function OwnerView( { params }: {
     params: Promise<{ ownerviewId: string}>;
@@ -27,6 +28,19 @@ export default async function OwnerView( { params }: {
         )
     }
 
+    const { data: concert} = await supabase.from("concert_concerts")
+        .select()
+        .eq('user_id',userKey.user_id)
+
+    if (concert == null){
+        return(
+            <body>
+            <p>No concerts</p>
+            </body>
+        )
+    }
+
+
     return (
         <body>
         <div id="desc">
@@ -36,12 +50,31 @@ export default async function OwnerView( { params }: {
             <p>
                 Bio: {userKey.bio_info}
             </p>
+            <p>
+                <a href={getLink(userKey.username)}>Edit Profile</a>
+            </p>
         </div>
         <div id="conc">
-            <ul>
-
+            <h1>Concert List:</h1>
+            <ul id={"concertList"}>
+                {concert.map((item: { user_id: Key; }) => (
+                    <>
+                        <li>item.headliner</li>
+                        <li>item.other_artists</li>
+                        <li>item.tourname</li>
+                        <li>item.date</li>
+                        <li>item.venue</li>
+                    </>
+                ))}
             </ul>
         </div>
         </body>
     );
+
+    function getLink(user:Key){
+        let stringURL = JSON.stringify(user)
+        stringURL = stringURL.replace(/"/g, "");
+        const baseUrl = "https://concert-project.vercel.app/profile/editbio/"
+        return baseUrl.concat(stringURL)
+    }
 }
