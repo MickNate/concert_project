@@ -17,9 +17,10 @@ export async function creUser(previousState: string, formData: FormData){
                 if (error.code == "23505")
                     return "Error: User already exists. Please try a new name";
                 else return "Error: " + error.code + " : " + error.message;
-            else
-                return "User created";
-            //window.location.href = "https://concert-project.vercel.app/profile/ownerview/" + username;
+            else{
+                const ownerLink = "https://concert-project.vercel.app/profile/ownerview/" + username;
+                return "Profile made! Click <a href={ownerLink}>here</a>";
+            }
         }
         else{
             return "Error: Passwords do not match";
