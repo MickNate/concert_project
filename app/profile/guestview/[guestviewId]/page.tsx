@@ -30,11 +30,11 @@ export default async function GuestView( { params }: {
 
     let concertEmpty = null
 
-    const { data: concert, error: nothing} = await supabase.from("concert_concerts")
+    const { data: concert} = await supabase.from("concert_concerts")
         .select()
         .eq('user_id',userKey.user_id)
 
-    if(nothing)
+    if(concert == null)
         concertEmpty = "No concerts listed yet!"
 
     if (concert == null){
