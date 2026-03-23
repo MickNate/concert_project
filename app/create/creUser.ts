@@ -19,6 +19,7 @@ export async function creUser(previousState: string, formData: FormData){
                 else return "Error: " + error.code + " : " + error.message;
             else{
                 window.location.href = "https://concert-project.vercel.app/profile/ownerview/" + username;
+                return "Profile created.";
             }
         }
         else{
