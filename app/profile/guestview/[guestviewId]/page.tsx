@@ -28,9 +28,14 @@ export default async function GuestView( { params }: {
         )
     }
 
-    const { data: concert} = await supabase.from("concert_concerts")
+    let concertEmpty = null
+
+    const { data: concert, error: nothing} = await supabase.from("concert_concerts")
         .select()
         .eq('user_id',userKey.user_id)
+
+    if(nothing)
+        concertEmpty = "No concerts listed yet!"
 
     if (concert == null){
         return(
@@ -38,10 +43,6 @@ export default async function GuestView( { params }: {
             <p>No concerts</p>
             </body>
         )
-    }
-
-    function nothingResponse(user_id: Key){
-
     }
 
     return (
@@ -64,9 +65,9 @@ export default async function GuestView( { params }: {
                         Venue: {item.venue}<br/>
                         Date: {item.date_of}<br/>
                         <br/>
-                        <p>Testing to see if this shows up.</p>
                     </li>
                 ))}
+                <p>{concertEmpty}</p>
             </ul>
         </div>
         </body>
