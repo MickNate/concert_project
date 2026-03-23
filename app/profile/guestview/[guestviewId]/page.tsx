@@ -40,6 +40,10 @@ export default async function GuestView( { params }: {
         )
     }
 
+    function nothingResponse(user_id: Key){
+
+    }
+
     return (
         <body>
         <div id="desc">
@@ -59,6 +63,8 @@ export default async function GuestView( { params }: {
                         Tour: {item.tour_name}<br/>
                         Venue: {item.venue}<br/>
                         Date: {item.date_of}<br/>
+                        <br/>
+                        <p>Testing to see if this shows up.</p>
                     </li>
                 ))}
             </ul>
