@@ -1,5 +1,6 @@
 "use server";
 
+import { redirect } from 'next/navigation';
 import {createClient} from "@/utils/supabase/server";
 
 export async function creUser(previousState: string, formData: FormData){
@@ -18,8 +19,9 @@ export async function creUser(previousState: string, formData: FormData){
                     return "Error: User already exists. Please try a new name";
                 else return "Error: " + error.code + " : " + error.message;
             else{
-                window.location.href = "https://concert-project.vercel.app/profile/ownerview/" + username;
-                return "Profile created.";
+                const baseUrl = "https://concert-project.vercel.app/profile/ownerview/" + username
+                redirect(baseUrl)
+                //return "Profile created.";
             }
         }
         else{
