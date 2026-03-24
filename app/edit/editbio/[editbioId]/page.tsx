@@ -16,7 +16,7 @@ export default function EditBio(){
         <div>
             <form action={action}>
                 <p><label htmlFor="edbio">When done, click submit.</label></p>
-                <textarea id="biobox"></textarea>
+                <textarea id="biobox" name="biobox">Tell us about yourself!!</textarea>
                 <br/>
                 <button type="submit">
                     {isLoading ? "Updating..." : "Update"}
