@@ -7,16 +7,16 @@ export async function bioEdit(previousState: string, formData: FormData){
     await new Promise((resolve) => setTimeout(resolve, 2000));
     const bio = formData.get("biobox") as string;
     if(bio == null){
-        return "Please input something into the box."
-
+        return "Please input something into the box.";
     }
     else{
         const supabase = await createClient();
         const { data, error } = await supabase
             .from('concert_users')
-            .update({ username: 'second'})
-            .eq('bio_info', 'Testing if this updates the bio')
+            .update({ bio_info: 'Testing if this updates the bio'})
+            .eq('username', 'second')
             .select()
+
         if (error)
             return "Error: " + error.code + " : " + error.message;
         else
