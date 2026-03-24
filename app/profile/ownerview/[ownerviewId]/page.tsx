@@ -46,6 +46,9 @@ export default async function OwnerView( { params }: {
         )
     }
 
+    const editBioLink = "https://concert-project.vercel.app/edit/editbio/" + userKey.username
+    const editConLink = "https://concert-project.vercel.app/edit/editconcert/" + userKey.username
+
 
     return (
         <body>
@@ -56,6 +59,7 @@ export default async function OwnerView( { params }: {
             <p>
                 Bio: {userKey.bio_info}
             </p>
+            <a href={editBioLink}>Edit Bio</a>
         </div>
         <div id="conc">
             <h1>Concert List:</h1>
@@ -70,6 +74,7 @@ export default async function OwnerView( { params }: {
                     </li>
                 ))}
                 <p>{concertEmpty}</p>
+                <a href={editConLink}>Edit Concerts</a>
             </ul>
         </div>
         </body>
