@@ -2,12 +2,12 @@
 
 import {useActionState} from "react";
 import {bioEdit} from "@/app/edit/editbio/[editbioId]/bioEdit";
-import { useParams } from 'next/navigation'
+import { useParams } from 'next/navigation';
 
 export default function EditBio(){
     const params = useParams<{ editBioId: string }>()
 
-    const [error, action, isLoading] = useActionState(bioEdit, "");
+    const [error, action, isLoading] = useActionState(bioEdit,"");
     return(
         <body>
         <div>
