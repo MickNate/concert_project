@@ -12,13 +12,14 @@ export async function bioEdit(previousState: string, formData: FormData){
     }
     else{
         const supabase = await createClient();
-        const { error } = await supabase
+        const { data, error } = await supabase
             .from('concert_users')
-            .update({ username: "second"})
-            .eq('bio_info', "Testing if this updates the bio")
+            .update({ username: 'second'})
+            .eq('bio_info', 'Testing if this updates the bio')
+            .select()
         if (error)
             return "Error: " + error.code + " : " + error.message;
         else
-            return "Successfully updated";
+            return "Successfully updated:" + data;
     }
 }
