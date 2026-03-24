@@ -14,7 +14,7 @@ export async function bioEdit(previousState: string, formData: FormData){
         const supabase = await createClient();
         const { error } = await supabase
             .from('concert_user')
-            .update({ name: bio})
+            .update({ name: "second"})
             .eq('bio_info', "Testing if this updates the bio")
         if (error)
             return "Error: " + error.code + " : " + error.message;
