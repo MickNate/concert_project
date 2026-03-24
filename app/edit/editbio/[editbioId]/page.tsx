@@ -7,7 +7,7 @@ import { useParams } from 'next/navigation'
 export default function EditBio(){
     const params = useParams<{ editBioId: string }>()
 
-    const [error, action, isLoading] = useActionState(bioEdit.bind(null, String(params)), "");
+    const [error, action, isLoading] = useActionState(bioEdit, "");
     return(
         <body>
         <div>

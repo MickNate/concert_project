@@ -3,7 +3,7 @@
 import { redirect } from 'next/navigation';
 import {createClient} from "@/utils/supabase/server";
 
-export async function bioEdit(editBioID : string, previousState: string, formData: FormData){
+export async function bioEdit(previousState: string, formData: FormData){
     await new Promise((resolve) => setTimeout(resolve, 2000));
     const bio = formData.get("biobox") as string;
     if(bio == null){
