@@ -11,7 +11,7 @@ export default function EditBio(){
     return(
         <body>
         <div>
-            <h1>Current Bio</h1>
+            <h1>Current Bio for {params.editBioId}</h1>
         </div>
         <div>
             <form action={action}>
