@@ -5,13 +5,13 @@ import {bioEdit} from "@/app/edit/editbio/[editbioId]/bioEdit";
 import { useParams } from 'next/navigation';
 
 export default function EditBio(){
-    const params = useParams<{ editBioId: string }>()
+    const params = useParams<{ editbioId: string }>()
 
     const [error, action, isLoading] = useActionState(bioEdit,"");
     return(
         <body>
         <div>
-            <h1>Current Bio for {params.editBioId}</h1>
+            <h1>Current Bio for {params.editbioId}</h1>
         </div>
         <div>
             <form action={action}>
