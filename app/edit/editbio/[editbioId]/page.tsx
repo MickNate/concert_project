@@ -6,15 +6,17 @@ import { useParams } from 'next/navigation';
 
 export default function EditBio(){
     const params = useParams<{ editbioId: string }>()
+    const bioId = params.editbioId;
 
-    const [error, action, isLoading] = useActionState(bioEdit,"");
+    const [error, action, isLoading] = useActionState(bioEdit,"", bioId);
     return(
         <body>
         <div>
-            <h1>Current Bio for {params.editbioId}</h1>
+            <h1>Current Bio for {bioId}</h1>
         </div>
         <div>
             <form action={action}>
+                <input type="hidden" id="bioparam" name="bioparam" value={bioId}/>
                 <p><label htmlFor="edbio">When done, click submit.</label></p>
                 <textarea id="biobox" name="biobox">Tell us about yourself!!</textarea>
                 <br/>
