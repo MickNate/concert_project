@@ -85,10 +85,10 @@ export default async function OwnerView( { params }: {
     );
 
     async function deleteConcert(formData: FormData){
-        const concert = formData.get("conId") as string
-        const response = await supabase
+        const concert = formData.get("conId") as string;
+        /*const response = await supabase
             .from('concert_concerts')
             .delete()
-            .eq('concert_id', parseInt(concert,10))
+            .eq('concert_id', parseInt(concert,10))*/
     }
 }
