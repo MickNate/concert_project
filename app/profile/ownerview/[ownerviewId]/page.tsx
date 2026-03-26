@@ -1,7 +1,6 @@
-import { promises as fs } from 'fs';
+
 import {createClient} from "@/utils/supabase/server";
 import {Key} from "react";
-import { useRouter } from 'next/navigation';
 
 export default async function OwnerView( { params }: {
     params: Promise<{ ownerviewId: string}>;
