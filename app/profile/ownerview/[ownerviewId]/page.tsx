@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs';
 import {createClient} from "@/utils/supabase/server";
 import {Key} from "react";
+import { useRouter } from 'next/navigation';
 
 export default async function OwnerView( { params }: {
     params: Promise<{ ownerviewId: string}>;
@@ -64,12 +65,16 @@ export default async function OwnerView( { params }: {
         <div id="conc">
             <h1>Concert List:</h1>
             <ul id={"concertList"}>
-                {concert.map((item: { user_id: Key; headliner: Key, venue: Key, other_artists: Key, date_of: Key, tour_name: Key}) => (
+                {concert.map((item: { concert_id: Key, user_id: Key; headliner: Key, venue: Key, other_artists: Key, date_of: Key, tour_name: Key}) => (
                     <li key ={item.user_id}>Headliner: {item.headliner}<br/>
                         Other Artists: {item.other_artists}<br/>
                         Tour: {item.tour_name}<br/>
                         Venue: {item.venue}<br/>
                         Date: {item.date_of}<br/>
+                        <form action={deleteConcert}>
+                            <input type="hidden" id="conId" name="conId" value={String(item.concert_id)} />
+                            <button type="submit">Delete</button>
+                        </form>
                         <br/>
                     </li>
                 ))}
@@ -79,4 +84,12 @@ export default async function OwnerView( { params }: {
         </div>
         </body>
     );
+
+    async function deleteConcert(formData: FormData){
+        const concert = formData.get("conId") as string
+        const response = await supabase
+            .from('concert_concerts')
+            .delete()
+            .eq('concert_id', parseInt(concert,10))
+    }
 }
