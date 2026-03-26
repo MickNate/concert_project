@@ -70,10 +70,7 @@ export default async function OwnerView( { params }: {
                         Tour: {item.tour_name}<br/>
                         Venue: {item.venue}<br/>
                         Date: {item.date_of}<br/>
-                        <form action={deleteConcert}>
-                            <input type="hidden" id="conId" name="conId" value={String(item.concert_id)} />
-                            <button type="submit">Delete</button>
-                        </form>
+                        <a href={getLink(String(item.concert_id))}>Delete Concert</a>
                         <br/>
                     </li>
                 ))}
@@ -84,11 +81,10 @@ export default async function OwnerView( { params }: {
         </body>
     );
 
-    function deleteConcert(formData: FormData){
-        const concert = formData.get("conId") as string;
-        /*const response = await supabase
-            .from('concert_concerts')
-            .delete()
-            .eq('concert_id', parseInt(concert,10))*/
+    function getLink(user:Key){
+        let stringURL = JSON.stringify(user)
+        stringURL = stringURL.replace(/"/g, "");
+        const baseUrl = "https://concert-project.vercel.app/profile/guestview/"
+        return baseUrl.concat(stringURL)
     }
 }
