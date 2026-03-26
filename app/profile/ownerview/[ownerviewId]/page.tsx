@@ -84,7 +84,7 @@ export default async function OwnerView( { params }: {
         </body>
     );
 
-    async function deleteConcert(formData: FormData){
+    function deleteConcert(formData: FormData){
         const concert = formData.get("conId") as string;
         /*const response = await supabase
             .from('concert_concerts')
