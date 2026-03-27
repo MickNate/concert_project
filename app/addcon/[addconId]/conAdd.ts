@@ -25,9 +25,10 @@ export async function conAdd(previousState: string, formData: FormData){
 
     const supabase = await createClient();
 
+    //, other_artists: other, tour_name: tour, venue: venue, date_of: showdate
     const { error } = await supabase
         .from('concert_concerts')
-        .insert({ user_id: user, headliner: head, other_artists: other, tour_name: tour, venue: venue, date_of: showdate})
+        .insert({ user_id: user, headliner: head})
     if (error)
         return "Error: " + error.code + " : " + error.message;
     else
