@@ -20,6 +20,7 @@ export default function Login(){
                     <button type="submit">
                         {isLoading ? "Logging In..." : "Login"}
                     </button>
+                    {error && <p>{error}</p>}
                 </form>
             </p>
         </div>
