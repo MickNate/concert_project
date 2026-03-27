@@ -15,7 +15,14 @@ export default function DeleteCon() {
     return(
         <body>
         <div>
-            <h1>Are you sure you want to delete concert {conId}?</h1>
+            <p>Are you sure you want to delete concert {conId}?</p>
+        </div>
+        <div>
+            <form>
+                <label htmlFor="input">Type the word DELETE in the box to finalize deletion.</label>
+                <input type="text" id="input" name="input"/><br/>
+                <button>Delete</button>
+            </form>
         </div>
         </body>
     );
