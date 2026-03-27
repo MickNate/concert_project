@@ -4,14 +4,14 @@ import {createClient} from "@/utils/supabase/server";
 
 export async function conAdd(previousState: string, formData: FormData){
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    const user = formData.get("user") as string;
+    const user = parseInt(formData.get("user") as string, 10);
     const head = formData.get("head") as string;
     let other: null | string = formData.get("other") as string;
     const venue = formData.get("venue") as string;
     const tour = formData.get("tour") as string;
     let showdate: null | string = formData.get("showdate") as string;
 
-    if((user == null) || (user == "")){
+    if(user == null){
         return "Error: User doesn't exist."
     }
     if((head == null) || (head == "")){
