@@ -5,8 +5,8 @@ import {createClient} from "@/utils/supabase/server";
 
 export async function loginCon(previousState: string, formData: FormData){
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    const username = formData.get("username") as string;
-    const password = formData.get("password") as string;
+    const username = formData.get("usernameInput") as string;
+    const password = formData.get("passwordInput") as string;
     if((username != null) && (password != null)){
         const supabase = await createClient();
         const { data: user } = await supabase

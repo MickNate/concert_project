@@ -25,19 +25,4 @@ export default function Login(){
             </p>
         </div>
     );
-
-
-
-    function loginUser() {
-
-      /*  let logUser = document.getElementById("usernameInput")
-        let logPass = document.getElementById("passwordInput")
-
-        if((logUser != null) && (logPass != null)){
-            const baseUrl = "https://concert-project.vercel.app/check?"
-            window.location.href = baseUrl.concat("user=",logUser.innerHTML,"&pass=",logPass.innerHTML)
-        }*/
-
-        alert("Serverside will be implemented later")
-    }
 }
