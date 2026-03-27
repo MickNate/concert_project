@@ -21,7 +21,7 @@ export async function conAdd(previousState: string, formData: FormData){
     if(showdate == "")
         showdate = null
 
-    other = "[" + other + "]";
+    other = "{" + other + "}";
 
     const supabase = await createClient();
 
