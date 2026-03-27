@@ -8,21 +8,24 @@ export default function DeleteCon() {
     const params = useParams<{ deleteconId: string }>()
     const conId = params.deleteconId;
 
-    //const [error, action, isLoading] = useActionState(conDel,"");
+
     // action={action}
     //{isLoading ? "Deleting..." : "Delete"}
     //{error && <p>{error}</p>}
+
+    const [error, action, isLoading] = useActionState(conDel,"");
     return(
         <body>
         <div>
             <p>Are you sure you want to delete concert {conId}?</p>
         </div>
         <div>
-            <form>
+            <form action={action}>
                 <input type="hidden" id="bioparam" name="bioparam" value={conId}/>
-                <label htmlFor="input">Type the word DELETE in the box to finalize deletion.</label>
+                <label htmlFor="input">Type the word DELETE in the box to finalize deletion:</label>
                 <input type="text" id="input" name="input"/><br/>
-                <button>Delete</button>
+                <button type="submit">{isLoading ? "Deleting..." : "Delete"}</button>
+                {error && <p>{error}</p>}
             </form>
         </div>
         </body>
