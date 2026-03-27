@@ -17,7 +17,7 @@ export default function DeleteCon() {
         <div>
             <form action={action}>
                 <input type="hidden" id="conparam" name="conparam" value={conId}/>
-                <p><label htmlFor="delMess">Type the word &#34;DELETE&#34; and click submit.</label></p>
+                <p><label htmlFor="userinput">Type the word &#34;DELETE&#34; and click submit.</label></p>
                 <input type="text" id="userinput" name="userinput">Type the message here</input>
                 <br/>
                 <button type="submit">
