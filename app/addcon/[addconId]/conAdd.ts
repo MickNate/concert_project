@@ -4,7 +4,7 @@ import {createClient} from "@/utils/supabase/server";
 
 export async function conAdd(previousState: string, formData: FormData){
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    const user = parseInt(formData.get("user") as string);
+    const user = formData.get("user") as string;
     const head = formData.get("head") as string;
     let other: null | string = formData.get("other") as string;
     const venue = formData.get("venue") as string;
@@ -29,7 +29,7 @@ export async function conAdd(previousState: string, formData: FormData){
     //, other_artists: other, tour_name: tour, venue: venue, date_of: showdate
     const { error } = await supabase
         .from('concert_concerts')
-        .insert({ user_id: user, headliner: head, other_artists: null, tour_name: null, date_of: null, venue: null})
+        .insert({ user_id: parseInt(user, 10), headliner: head, other_artists: null, tour_name: null, date_of: null, venue: null})
     if (error)
         return "Error: " + error.code + " : " + error.message + "User_id is " + {user};
     else
