@@ -29,7 +29,7 @@ export async function conAdd(previousState: string, formData: FormData){
     //, other_artists: other, tour_name: tour, venue: venue, date_of: showdate
     const { error } = await supabase
         .from('concert_concerts')
-        .insert({ user_id: parseInt(user, 10), headliner: head, other_artists: null, tour_name: null, date_of: null, venue: null})
+        .insert({ user_id: parseInt(user, 10), headliner: head, other_artists: other, tour_name: tour, date_of: showdate, venue: venue})
     if (error)
         return "Error: " + error.code + " : " + error.message + "User_id is " + {user};
     else
