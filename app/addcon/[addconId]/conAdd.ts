@@ -4,7 +4,7 @@ import {createClient} from "@/utils/supabase/server";
 
 export async function conAdd(previousState: string, formData: FormData){
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    const user = formData.get("user") as string;
+    const user = parseInt(formData.get("user") as string);
     const head = formData.get("head") as string;
     let other: null | string = formData.get("other") as string;
     const venue = formData.get("venue") as string;
