@@ -26,7 +26,7 @@ export default function AddCon() {
                     id="showdate"
                     name="showdate"
                     min="1900-01-01"
-                    max="2030-12-31"/>
+                    max="2030-12-31"/><br/>
                 <label htmlFor="venue">Venue:</label><br/>
                 <input type="text" id="venue" name="venue"/><br/>
                 <button>Add</button>
