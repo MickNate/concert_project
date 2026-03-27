@@ -31,7 +31,7 @@ export async function conAdd(previousState: string, formData: FormData){
         .from('concert_concerts')
         .insert({ user_id: user, headliner: head, other_artists: null, tour_name: null, date_of: null, venue: null})
     if (error)
-        return "Error: " + error.code + " : " + error.message;
+        return "Error: " + error.code + " : " + error.message + "User_id is " + {user};
     else
         return "Successfully created!";
 }
