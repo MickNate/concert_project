@@ -15,15 +15,7 @@ export default function DeleteCon() {
     return(
         <body>
         <div>
-            <h1>Are you sure you want to delete this concert?</h1>
-        </div>
-        <div>
-            <form>
-                <input type="hidden" id="conparam" name="conparam" value={conId}/>
-                <label htmlFor="userinput">Type the word DELETE and click submit.</label>
-                <input type="text" id="userinput" name="userinput">Type the message here</input>
-                <button type="submit">Delete</button>
-            </form>
+            <h1>Are you sure you want to delete concert {conId}?</h1>
         </div>
         </body>
     );
