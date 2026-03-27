@@ -2,6 +2,7 @@
 
 import { redirect } from 'next/navigation';
 import {createClient} from "@/utils/supabase/server";
+import {Key} from "react";
 
 export async function loginCon(previousState: string, formData: FormData){
     await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -26,7 +27,13 @@ export async function loginCon(previousState: string, formData: FormData){
             return "Error: User does not exist. Please check spelling."
         }
         if((userKey.username === username) && (userKey.password === password)){
+            redirect(getLink(username))
             return "Login successful!"
         }
         else return "Username/Password do not match."
+
+    function getLink(name:string){
+         const baseUrl = "https://concert-project.vercel.app/profile/ownerview/"
+         return baseUrl.concat(name)
+    }
 }
