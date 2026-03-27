@@ -72,11 +72,12 @@ export default async function OwnerView( { params }: {
                         Date: {item.date_of}<br/>
                         <a href={getLink(String(item.concert_id))}>Delete Concert</a>
                         <br/>
+                        <br/>
                     </li>
                 ))}
                 <p>{concertEmpty}</p>
-                <a href={addConLink}>Add Concert</a>
             </ul>
+            <a href={addConLink}>Add Concert</a>
         </div>
         </body>
     );
