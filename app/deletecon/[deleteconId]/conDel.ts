@@ -7,7 +7,7 @@ export async function conDel(previousState: string, formData: FormData){
     const delInput = formData.get("userinput") as string;
     const conId = formData.get("conparam") as string;
 
-    if((delInput != null) || (delInput != "")){
+    if((delInput == null) || (delInput == "")){
         return "Error: No input received."
     }
     else{
