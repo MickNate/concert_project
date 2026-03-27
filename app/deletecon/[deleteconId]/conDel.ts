@@ -7,6 +7,9 @@ export async function conDel(previousState: string, formData: FormData){
     const delInput = formData.get("userinput") as string;
     const conId = formData.get("conparam") as string;
 
+    if(delInput != "DELETE")
+        return "Error: Input does not match DELETE"
+
     const supabase = await createClient();
     const { data, error } = await supabase
         .from('concert_concerts')
@@ -16,5 +19,5 @@ export async function conDel(previousState: string, formData: FormData){
     if (error)
         return "Error: " + error.code + " : " + error.message;
     else
-        return "Successfully updated:" + {data};
+        return "Successfully deleted";
 }
