@@ -8,7 +8,7 @@ export default function EditBio(){
     const params = useParams<{ editbioId: string }>()
     const bioId = params.editbioId;
 
-    const [error, action, isLoading] = useActionState(bioEdit,"", bioId);
+    const [error, action, isLoading] = useActionState(bioEdit,"");
     return(
         <body>
         <div>

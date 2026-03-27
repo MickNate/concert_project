@@ -1,63 +1,31 @@
-import {createClient} from "@/utils/supabase/server";
-import {Key} from "react";
+"use client";
 
-export default async function deleteCon( { params }: {
-    params: Promise<{ deleteconId: string}>;
-}) {
+import {useActionState} from "react";
+import {useParams} from "next/navigation";
+import {conDel} from "@/app/deletecon/[deleteconId]/conDel";
 
-    const conId = (await params).deleteconId;
+export default function DeleteCon() {
+    const params = useParams<{ deleteconId: string }>()
+    const conId = params.deleteconId;
 
-    const supabase = await createClient();
-
-    const {data: user, error} = await supabase
-        .from('concert_concerts')
-        .delete()
-        .eq('concert_id', parseInt(conId, 10))
-        .select('user_id')
-
-    if(user == null)
-    return(
-        <body>
-        <p>This event does not exist.</p>
-        </body>
-    )
-
-    const conKey = user.find(person => person.user_id === conId)
-
-    if (!conKey){
-        return(
-            <body>
-            <p>This user does not exist</p>
-            </body>
-        )
-    }
-
-    const { data: userInfo} = await supabase.from("concert_users")
-        .select()
-        .eq('user_id',conKey.user_id)
-
-    if(userInfo == null)
-        return(
-            <body>
-            <p>This event does not exist.</p>
-            </body>
-        )
-
-    const userKey = userInfo.find(person => person.user_id === conId)
-
+    const [error, action, isLoading] = useActionState(conDel,"");
     return(
         <body>
         <div>
-            <p>Concert deleted!</p><br/>
-            <a href={getLink(userKey.username)}>Click here to return to your profile!</a>
+            <h1>Are you sure you want to delete this concert?</h1>
+        </div>
+        <div>
+            <form action={action}>
+                <input type="hidden" id="conparam" name="conparam" value={conId}/>
+                <p><label htmlFor="delMess">Type the word &#34;DELETE&#34; and click submit.</label></p>
+                <input type="text" id="userinput" name="userinput">Type the message here</input>
+                <br/>
+                <button type="submit">
+                    {isLoading ? "Deleting..." : "Delete"}
+                </button>
+                {error && <p>{error}</p>}
+            </form>
         </div>
         </body>
     );
-
-    function getLink(user:Key){
-        let stringURL = JSON.stringify(user)
-        stringURL = stringURL.replace(/"/g, "");
-        const baseUrl = "https://concert-project.vercel.app/profile/ownerview/"
-        return baseUrl.concat(stringURL)
-    }
 }
