@@ -7,11 +7,16 @@ export async function loginCon(previousState: string, formData: FormData){
     await new Promise((resolve) => setTimeout(resolve, 2000));
     const username = formData.get("usernameInput") as string;
     const password = formData.get("passwordInput") as string;
-    if((username != null) && (password != null)){
+
+    if((username == null) || (password == null)){
+        return "Please input something into the boxes."
+    }
+
         const supabase = await createClient();
         const { data: user } = await supabase
             .from("concert_users")
             .select();
+
         if(user == null){
             return "Error: Something went wrong with the server";
         }
@@ -24,6 +29,4 @@ export async function loginCon(previousState: string, formData: FormData){
             return "Login successful!"
         }
         else return "Username/Password do not match."
-    }
-    else return "Placeholder";
 }
