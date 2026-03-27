@@ -7,18 +7,14 @@ export async function conDel(previousState: string, formData: FormData){
     const delInput = formData.get("userinput") as string;
     const conId = formData.get("conparam") as string;
 
-    if(delInput === "DELETE"){
-        const supabase = await createClient();
-        const { data, error } = await supabase
-            .from('concert_concerts')
-            .delete()
-            .eq('concert_id', conId)
-            .select()
+    const supabase = await createClient();
+    const { data, error } = await supabase
+        .from('concert_concerts')
+        .delete()
+        .eq('concert_id', conId)
 
-        if(error) return "Error: Something went wrong";
-        else return "The event was successfully deleted";
-    }
-    else{
-        return "Error: No input received."
-    }
+    if (error)
+        return "Error: " + error.code + " : " + error.message;
+    else
+        return "Successfully updated:" + {data};
 }
