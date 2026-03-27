@@ -4,12 +4,12 @@ import {createClient} from "@/utils/supabase/server";
 
 export async function conDel(previousState: string, formData: FormData){
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    const delInput = formData.get("userinput") as string;
+    const delInput = formData.get("input") as string;
     const conId = formData.get("conparam") as string;
     const deleteMessage = "DELETE";
 
     if(delInput != deleteMessage)
-        return "Error:" + delInput + "does not match DELETE"
+        return "Error: " + delInput + " does not match DELETE"
 
     const supabase = await createClient();
     const { data, error } = await supabase
