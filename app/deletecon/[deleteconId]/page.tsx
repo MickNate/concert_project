@@ -19,6 +19,7 @@ export default function DeleteCon() {
         </div>
         <div>
             <form>
+                <input type="hidden" id="bioparam" name="bioparam" value={conId}/>
                 <label htmlFor="input">Type the word DELETE in the box to finalize deletion.</label>
                 <input type="text" id="input" name="input"/><br/>
                 <button>Delete</button>
