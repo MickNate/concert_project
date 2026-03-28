@@ -3,6 +3,7 @@
 import { redirect } from 'next/navigation';
 import {createClient} from "@/utils/supabase/server";
 import {Key} from "react";
+import { cookies } from 'next/headers'
 
 export async function loginCon(previousState: string, formData: FormData){
     await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -27,6 +28,9 @@ export async function loginCon(previousState: string, formData: FormData){
             return "Error: User does not exist. Please check spelling."
         }
         if((userKey.username === username) && (userKey.password === password)){
+            const cookieStore = await cookies();
+            cookieStore.set('user', userKey.username, {secure: true})
+
             redirect(getLink(username))
             return "Login successful!"
         }

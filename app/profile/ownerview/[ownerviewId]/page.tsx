@@ -1,11 +1,21 @@
 
 import {createClient} from "@/utils/supabase/server";
 import {Key} from "react";
+import {cookies} from "next/headers";
+import { redirect, RedirectType } from 'next/navigation'
 
 export default async function OwnerView( { params }: {
     params: Promise<{ ownerviewId: string}>;
 }){
     const ownerviewID = (await params).ownerviewId;
+
+    const cookieStore = await cookies()
+    const logCookie = cookieStore.get('user')
+    const cookieValue = logCookie?.value
+
+    if(cookieValue != ownerviewID){
+        redirect("https://concert-project.vercel.app/profile/ownerview/" + cookieValue);
+    }
 
     const supabase = await createClient();
     const { data: user } = await supabase.from("concert_users").select();
