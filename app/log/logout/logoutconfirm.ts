@@ -11,8 +11,8 @@ export async function logoutCon(){
     const logCookie = cookieStore.get('user');
     cookieStore.delete('user');
 
-    if(!cookieStore.has('user'))
-        redirect("https://concert-project.vercel.app/profile");
-    else
+    if(cookieStore.has('user'))
         return "Error: Unable to logout";
+    else
+        return "Logout Successful!";
 }
