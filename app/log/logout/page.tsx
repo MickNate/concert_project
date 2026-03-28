@@ -16,6 +16,7 @@ export default function Logout(){
                     <button type="submit">
                         {isLoading ? "Logging Out..." : "Logout"}
                     </button>
+                    {error && <p>{error}</p>}
                 </form>
             </p>
         </div>

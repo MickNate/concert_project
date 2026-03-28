@@ -1,7 +1,7 @@
 export default function GuestView(){
     return (
         <p>
-            This will be the page for guests to view another's profile.
+            Need to clarify the name of a profile. Check the list to see them all.
         </p>
     );
 }
