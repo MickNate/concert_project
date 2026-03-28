@@ -7,7 +7,7 @@ export default async function OwnerView(){
     const logCookie = cookieStore.get('user')
     const cookieValue = logCookie?.value
 
-    if(!cookieStore.has('user')){
+    if(cookieStore.has('user')){
         redirect("https://concert-project.vercel.app/profile/ownerview" + cookieValue);
     }
 
