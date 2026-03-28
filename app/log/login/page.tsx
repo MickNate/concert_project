@@ -1,6 +1,6 @@
 'use client';
 
-import {loginCon} from "@/app/login/loginconfirm";
+import {loginCon} from "@/app/log/login/loginconfirm";
 import {useActionState} from "react";
 
 export default function Login(){

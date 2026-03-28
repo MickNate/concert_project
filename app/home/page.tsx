@@ -1,17 +1,31 @@
-export default function Home(){
+import {cookies} from "next/headers";
+import {redirect} from "next/navigation";
 
-    return (
-        <div>
-            <p>Welcome to Concert Project!</p>
-            <p>Are you a returning user or a new user?</p>
+export default async function Home(){
 
-            <a href="../create">
-                <button>New User</button>
-            </a>
-            <a href="../login">
-                <button>Returning User</button>
-            </a>
+    const cookieStore = await cookies()
+    const logCookie = cookieStore.get('user')
+    const cookieValue = logCookie?.value
 
-        </div>
-    );
+    if (cookieStore.has('user'))
+        return(
+            <div>
+                <p>Hey {cookieValue}! Update your profile or take a look at other users concert list!</p>
+            </div>
+        );
+    else
+        return (
+            <div>
+                <p>Welcome to Concert Project!</p>
+                <p>Are you a returning user or a new user?</p>
+
+                <a href="../create">
+                    <button>New User</button>
+                </a>
+                <a href="../log/login">
+                    <button>Returning User</button>
+                </a>
+
+            </div>
+        );
 }
