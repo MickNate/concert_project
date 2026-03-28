@@ -20,7 +20,7 @@ export default function AddCon() {
                 <input type="hidden" id="user" name="user" value={userId}/>
                 <label htmlFor="head">Headliner:</label><br/>
                 <input type="text" id="head" name="head"/><br/>
-                <label htmlFor="other">Other Artists:</label><br/>
+                <label htmlFor="other">Other Artists (please put a comma between each artist):</label><br/>
                 <input type="text" id="other" name="other"/><br/>
                 <label htmlFor="tour">Tour:</label><br/>
                 <input type="text" id="tour" name="tour"/><br/>
