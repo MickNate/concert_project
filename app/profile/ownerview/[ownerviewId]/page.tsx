@@ -13,6 +13,10 @@ export default async function OwnerView( { params }: {
     const logCookie = cookieStore.get('user')
     const cookieValue = logCookie?.value
 
+    if(!cookieStore.has('user')){
+        redirect("https://concert-project.vercel.app/profile/guestview/" + ownerviewID);
+    }
+
     if(cookieValue != ownerviewID){
         redirect("https://concert-project.vercel.app/profile/ownerview/" + cookieValue);
     }

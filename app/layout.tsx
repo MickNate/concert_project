@@ -33,7 +33,7 @@ export default function RootLayout({
               <li>Concert Project</li>
               <li><Link href={"/home"}> Home </Link></li>
               <li><Link href={"/profile/ownerview"}> Profile </Link></li>
-              <li><Link href={"/login"}> Login </Link></li>
+              <li><Link href={"/login"}> Login/Logout </Link></li>
               <li><Link href={"/list"}> Members </Link></li>
           </ul>
       </div>
