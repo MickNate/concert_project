@@ -33,11 +33,13 @@ export default async function Home(){
                         {entry.map((item: { concert_id: Key, date_of: Key, headliner: Key,
                             tour_name: Key, other_artists: Key, venue: Key}) => (
                             <li key={item.concert_id}>
+                                <br/>
                                 Headliner: {item.headliner}<br/>
                                 Other Artists: {item.other_artists}<br/>
                                 Tour: {item.tour_name}<br/>
                                 Venue: {item.venue}<br/>
                                 Date: {item.date_of}<br/>
+                                <br/>
                             </li>
                         ))}
                     </ul>
