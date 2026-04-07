@@ -1,9 +1,9 @@
-ul {
+.latestPosts {
     background-color: #808080;
     padding: 20px;
 }
 
-ul li {
+.latestPosts li {
     background-color: #f1f1f1;
     margin: 5px;
 }
