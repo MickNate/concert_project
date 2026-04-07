@@ -1,10 +1,9 @@
 ul {
-    background: powderblue;
+    background-color: #808080;
     padding: 20px;
 }
 
 ul li {
-    background: mistyrose;
-    color: darkblue;
+    background-color: #f1f1f1;
     margin: 5px;
 }

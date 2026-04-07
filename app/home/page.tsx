@@ -30,7 +30,7 @@ export default async function Home(){
                 </div>
                 <div>
                     <p>Here is the latest news from other concert fans!</p>
-                    <ul id={"latestPosts"}>
+                    <ul id="latestPosts">
                         {entry.map((item: { concert_id: Key, date_of: Key, headliner: Key,
                             tour_name: Key, other_artists: Key, venue: Key}) => (
                             <li key={item.concert_id}>
@@ -63,7 +63,7 @@ export default async function Home(){
                 </div>
             <div>
                 <p>Here is the latest news from other concert fans!</p>
-                <ul id={"latestPosts"}>
+                <ul id="latestPosts">
                     {entry.map((item: { concert_id: Key, date_of: Key, headliner: Key,
                         tour_name: Key, other_artists: Key, venue: Key}) => (
                         <li key={item.concert_id}>
