@@ -2,6 +2,7 @@
 
 import { redirect } from 'next/navigation';
 import {createClient} from "@/utils/supabase/server";
+import {cookies} from "next/headers";
 
 export async function creUser(previousState: string, formData: FormData){
     await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -19,6 +20,8 @@ export async function creUser(previousState: string, formData: FormData){
                     return "Error: User already exists. Please try a new name";
                 else return "Error: " + error.code + " : " + error.message;
             else{
+                const cookieStore = await cookies();
+                cookieStore.set('user', username, {secure: true});
                 const baseUrl = "https://concert-project.vercel.app/profile/ownerview/" + username
                 redirect(baseUrl)
                 return "Profile created. Please proceed to login page";
