@@ -21,7 +21,7 @@ export async function creUser(previousState: string, formData: FormData){
             else{
                 const baseUrl = "https://concert-project.vercel.app/profile/ownerview/" + username
                 redirect(baseUrl)
-                //return "Profile created.";
+                return "Profile created. Please proceed to login page";
             }
         }
         else{

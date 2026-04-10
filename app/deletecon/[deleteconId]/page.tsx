@@ -12,7 +12,7 @@ export default function DeleteCon() {
     return(
         <body>
         <div>
-            <p>Are you sure you want to delete concert {conId}?</p>
+            <p>Are you sure you want to delete this concert?</p>
         </div>
         <div>
             <form action={action}>
