@@ -1,4 +1,4 @@
-export async function About(){
+export default function About(){
 
     return(
         <div>
