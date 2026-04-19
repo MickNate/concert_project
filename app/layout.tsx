@@ -30,8 +30,8 @@ export default function RootLayout({
       >
       <div>
           <ul id = "uniHeader">
-              <li>Concert Project</li>
-              <li><Link href={"/home"}> Home </Link></li>
+              <li><Link href={"/home"}>Concert Project</Link></li>
+              <li><Link href={"/about"}> About Us </Link></li>
               <li><Link href={"/profile/ownerview"}> Profile </Link></li>
               <li><Link href={"/log"}> Login/Logout </Link></li>
               <li><Link href={"/list"}> Members </Link></li>
