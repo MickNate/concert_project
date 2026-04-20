@@ -85,6 +85,7 @@ export default async function OwnerView( { params }: {
                         Venue: {item.venue}<br/>
                         Date: {item.date_of}<br/>
                         <a href={getDelLink(String(item.concert_id))}>Delete Concert</a>
+                        {"    "}
                         <a href={getEdLink(String(item.concert_id))}>Edit Concert</a>
                         <br/>
                         <br/>
