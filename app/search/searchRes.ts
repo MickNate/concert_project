@@ -44,8 +44,19 @@ export async function searchRes(previousState: string, formData: FormData){
     if(results.length == 0)
         return "Nobody has attended a concert of this artist."
 
+    const finres = "";
+
+    for(let k = 0; k < results.length; k++){
+        const {data: user} = await supabase
+            .from("concert_users")
+            .select('username')
+            .eq('user_id', results[k])
+
+        if(user)
+            finres.concat(user[0].username)
+    }
 
 
-    return "Results are " + results;
+    return "Results are " + finres;
 
 }
