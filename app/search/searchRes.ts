@@ -1,6 +1,8 @@
 "use server";
 
 import {createClient} from "@/utils/supabase/server";
+import { cookies } from 'next/headers';
+import {redirect} from "next/navigation";
 
 export async function searchRes(previousState: string, formData: FormData){
     await new Promise((resolve) => setTimeout(resolve, 2000))
@@ -56,8 +58,13 @@ export async function searchRes(previousState: string, formData: FormData){
             finres.push(user[0].username);
     }
 
-    const url = "https://concert-project.vercel.app/profile/guestview/"
-    const fullurl = url.concat(finres.toString())
-    return {`<a href="${fullurl}">${finres.toString()}</a>`};
+    const cookieStore = await cookies();
+    cookieStore.set('search', JSON.stringify(finres), {secure: true});
+
+    const baseUrl = "https://concert-project.vercel.app/result/";
+
+    redirect(baseUrl);
+
+    return "Users found!"
 
 }
