@@ -21,11 +21,7 @@ export default async function Result(){
                 <div>
                     <p>Here&#39;s the users that searched for your artist!</p>
                     <ul id={"foundUsers"}>
-                        {users.map((item: { username: string; }) => (
-                            <li key={item.username}>
-                                <a href={getLink(item.username)}>{item.username}</a>
-                            </li>
-                        ))}
+                        <li>{users}</li>
                     </ul>
                 </div>
                 </body>
