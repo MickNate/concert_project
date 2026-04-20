@@ -48,7 +48,7 @@ export async function searchRes(previousState: string, formData: FormData){
             }
             console.log("Made it pass the user table.");
 
-            return "The output is " + found[0];
+            return "The output is " + concert[0].user_id;
         }
 
     }
