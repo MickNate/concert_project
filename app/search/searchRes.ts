@@ -32,7 +32,7 @@ export async function searchRes(previousState: string, formData: FormData){
                 return "Error: " + error.code + " : " + error.message;
             }
 
-            return user;
+            return {user} + " was found";
         }
 
     }
