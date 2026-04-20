@@ -48,7 +48,7 @@ export async function searchRes(previousState: string, formData: FormData){
             }
             console.log("Made it pass the user table.");
 
-            return "The input is " + input;
+            return "The output is " + found[0];
         }
 
     }
