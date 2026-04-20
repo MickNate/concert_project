@@ -13,7 +13,7 @@ export default async function Result(){
                 const display = ""
                 const url = "https://concert-project.vercel.app/profile/guestview/"
                 for(let i = 0; i < userList.length; i++){
-                    display.concat(`<a href="${url}">${userList[i]}</a><br/>`)
+                    display.concat(`<li><a href="${url}">${userList[i]}</a></li><br/>`)
                 }
                 return display;
             }
