@@ -10,10 +10,10 @@ export default async function Result(){
         if (cookieValue != null) {
             const users = JSON.parse(cookieValue);
             function getList(userList: string){
-                const display = ""
-                const url = "https://concert-project.vercel.app/profile/guestview/"
+                let display = "";
+                const url = "https://concert-project.vercel.app/profile/guestview/";
                 for(let i = 0; i < userList.length; i++){
-                    display.concat(`<li><a href="${url}">${userList[i]}</a></li><br/>`)
+                    display += `<a href="${url}">${userList[i]}</a><br/>`;
                 }
                 return display;
             }
