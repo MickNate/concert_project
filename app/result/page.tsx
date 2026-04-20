@@ -3,12 +3,15 @@ import {Key} from "react";
 
 export default async function Result(){
 
+    console.log("Starting result");
     const cookieStore = await cookies()
     const searchCookie = cookieStore.get('search')
     const cookieValue = searchCookie?.value
+    console.log("Retrieving cookies");
 
     if(cookieStore.has('search')) {
         if (cookieValue != null) {
+            console.log("Cookie has value");
             const users = JSON.parse(cookieValue);
 
             function getLink(input: string){
@@ -17,6 +20,7 @@ export default async function Result(){
             }
             cookieStore.delete('search');
 
+            console.log("Starting If Return");
             return (
                 <body>
                 <div>
@@ -34,6 +38,7 @@ export default async function Result(){
         }
     }
     else{
+        console.log("Starting Else return");
         return(
             <body>
             <div>
