@@ -1,6 +1,7 @@
 "use server";
 
 import {createClient} from "@/utils/supabase/server";
+import {redirect} from "next/navigation";
 
 export async function conDel(previousState: string, formData: FormData){
     await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -19,6 +20,8 @@ export async function conDel(previousState: string, formData: FormData){
 
     if (error)
         return "Error: " + error.code + " : " + error.message;
-    else
+    else {
+        redirect("https://concert-project.vercel.app/profile/ownerview/");
         return "Successfully deleted";
+    }
 }
