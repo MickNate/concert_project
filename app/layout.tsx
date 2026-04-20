@@ -35,6 +35,7 @@ export default function RootLayout({
               <li><Link href={"/profile/ownerview"}> Profile </Link></li>
               <li><Link href={"/log"}> Login/Logout </Link></li>
               <li><Link href={"/list"}> Members </Link></li>
+              <li><Link href={"/search"}> Search </Link></li>
           </ul>
       </div>
         {children}
