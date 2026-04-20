@@ -84,7 +84,8 @@ export default async function OwnerView( { params }: {
                         Tour: {item.tour_name}<br/>
                         Venue: {item.venue}<br/>
                         Date: {item.date_of}<br/>
-                        <a href={getLink(String(item.concert_id))}>Delete Concert</a>
+                        <a href={getDelLink(String(item.concert_id))}>Delete Concert</a>
+                        <a href={getEdLink(String(item.concert_id))}>Edit Concert</a>
                         <br/>
                         <br/>
                     </li>
@@ -96,10 +97,17 @@ export default async function OwnerView( { params }: {
         </body>
     );
 
-    function getLink(user:Key){
-        let stringURL = JSON.stringify(user)
+    function getDelLink(con:Key){
+        let stringURL = JSON.stringify(con)
         stringURL = stringURL.replace(/"/g, "");
         const baseUrl = "https://concert-project.vercel.app/deletecon/"
+        return baseUrl.concat(stringURL)
+    }
+
+    function getEdLink(con:Key){
+        let stringURL = JSON.stringify(con)
+        stringURL = stringURL.replace(/"/g, "");
+        const baseUrl = "https://concert-project.vercel.app/edit/editcon/"
         return baseUrl.concat(stringURL)
     }
 }
