@@ -32,6 +32,9 @@ export async function searchRes(previousState: string, formData: FormData){
             if(error){
                 return "Error for user table: " + error.code + " : " + error.message;
             }
+            if(user == null){
+                return "Error accessing user."
+            }
 
             return {user} + " was of the artists found";
         }
