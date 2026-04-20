@@ -26,10 +26,11 @@ export default async function Home(){
         return(
             <body>
                 <div>
-                    <p>Hey {cookieValue}! Update your profile or take a look at other users concert list!</p>
+                    <p>Hey {cookieValue}!</p>
                 </div>
                 <div>
-                    <p>Here is the latest news from other concert fans!</p>
+                    <p>Here is the latest news from other concert fans! Why not add your own latest?</p>
+                    <a href="../addcon"><button>Add Concert</button></a><br/>
                     <ul id="latestPosts">
                         {entry.map((item: { concert_id: Key, date_of: Key, headliner: Key,
                             tour_name: Key, other_artists: Key, venue: Key}) => (
