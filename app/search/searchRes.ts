@@ -57,6 +57,6 @@ export async function searchRes(previousState: string, formData: FormData){
     }
 
 
-    return "Results are " + finres.toString();
+    return "Results are " + finres.length;
 
 }
