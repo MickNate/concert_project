@@ -13,7 +13,7 @@ export async function searchRes(previousState: string, formData: FormData){
         const { data: concert, error} = await supabase
             .from("concert_concerts")
             .select('user_id')
-            .textSearch('*', artist)
+            .textSearch('headliner', artist)
 
         if(error){
             return "Error for concert table: " + error.code + " : " + error.message;
