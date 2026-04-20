@@ -41,14 +41,14 @@ export async function searchRes(previousState: string, formData: FormData){
                     .select('username')
                     .eq('user_id',concert[i].user_id)
                 if(user != null)
-                    found.push(user.toString())
+                    found.push(user)
                 if(error){
                     return "Error for user table: " + error.code + " : " + error.message;
                 }
             }
             console.log("Made it pass the user table.");
 
-            return "The output is " + found[0];
+            return "The input is " + input;
         }
 
     }
