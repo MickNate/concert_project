@@ -32,7 +32,7 @@ export async function searchRes(previousState: string, formData: FormData){
                 return "Error for user table: " + error.code + " : " + error.message;
             }
 
-            return {user} + " was found";
+            return {user} + " was of the artists found";
         }
 
     }
