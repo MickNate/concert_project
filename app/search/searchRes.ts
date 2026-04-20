@@ -53,7 +53,7 @@ export async function searchRes(previousState: string, formData: FormData){
             .eq('user_id', results[k])
 
         if(user)
-            finres.concat(user[0].username)
+            finres.concat(user[0].username);
     }
 
 
