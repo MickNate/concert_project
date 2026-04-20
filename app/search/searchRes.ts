@@ -35,13 +35,13 @@ export async function searchRes(previousState: string, formData: FormData){
 
             const found = [];
 
-            for(const record of concert){
+            for (let i = 0; i < concert.length; i++) {
                 const {data: user, error} = await supabase
                     .from("concert_users")
                     .select('username')
-                    .eq('user_id',record.user_id)
+                    .eq('user_id',concert[i].user_id)
                 if(user != null)
-                    found.push(record.toString())
+                    found.push(user.toString())
                 if(error){
                     return "Error for user table: " + error.code + " : " + error.message;
                 }
