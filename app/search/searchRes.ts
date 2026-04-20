@@ -28,7 +28,7 @@ export async function searchRes(previousState: string, formData: FormData){
             const {data: user, error} = await supabase
                 .from("concert_users")
                 .select('username')
-                .eq('user_id',concert)
+                .eq('user_id',concert[0].user_id)
             if(error){
                 return "Error for user table: " + error.code + " : " + error.message;
             }
