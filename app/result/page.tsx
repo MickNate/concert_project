@@ -1,4 +1,5 @@
 import {cookies} from "next/headers";
+import {Key} from "react";
 
 export default async function Result(){
 
@@ -10,13 +11,9 @@ export default async function Result(){
         if (cookieValue != null) {
             const users = JSON.parse(cookieValue);
 
-            function getList(userList: string){
-                let display = "";
-                const url = "https://concert-project.vercel.app/profile/guestview/";
-                for(let i = 0; i < userList.length; i++){
-                    display += `<a href="${url}">${userList[i]}</a><br/>`;
-                }
-                return display;
+            function getLink(input: string){
+                const baseUrl = "https://concert-project.vercel.app/profile/guestview/"
+                return baseUrl.concat(input)
             }
 
             return (
@@ -24,7 +21,11 @@ export default async function Result(){
                 <div>
                     <p>Here&#39;s the users that searched for your artist!</p>
                     <ul id="foundUsers">
-                        <li>{getList(users)}</li>
+                        {users.map((item: { username: string; }) => (
+                            <li key={item.username}>
+                                <a href={getLink(item.username)}>{item.username}</a>
+                            </li>
+                        ))}
                     </ul>
                 </div>
                 </body>
