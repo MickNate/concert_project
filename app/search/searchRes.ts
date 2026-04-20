@@ -16,20 +16,32 @@ export async function searchRes(previousState: string, formData: FormData){
             .from("concert_concerts")
             .select('user_id')
             .textSearch('headliner', input, {type: 'phrase', config: 'english'})
-            .select('user_id')
-            .textSearch('other_artists', input, {type: 'phrase', config: 'english'})
 
         if (error) {
             return "Error for concert table: " + error.code + " : " + error.message;
         }
-        if(concert == null || concert.length == 0 ){
-            return "No user appears to have attended this concert.";
+
+        const {data: otherart} = await supabase
+            .from("concert_concerts")
+            .select('user_id')
+            .textSearch('other_artists', input, {type: 'phrase', config: 'english'})
+
+        if (error) {
+            return "Error for concert table.";
         }
 
         else{
             const results = [];
-            for(let i = 0; i < concert.length; i++){
-                results.push(concert[i].user_id);
+            if(concert != null){
+                for(let i = 0; i < concert.length; i++){
+                    results.push(concert[i].user_id);
+                }
+            }
+            if(otherart != null){
+                for(let j = 0; j < otherart.length; j++){
+                    if(results.includes(otherart[j].user_id))
+                        results.push(concert[j].user_id);
+                }
             }
             return "Results are " + results;
         }
