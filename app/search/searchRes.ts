@@ -37,7 +37,7 @@ export async function searchRes(previousState: string, formData: FormData){
     if(otherart != null){
         for(let j = 0; j < otherart.length; j++){
             if(results.includes(otherart[j].user_id))
-                results.push(concert[j].user_id);
+                results.push(otherart[j].user_id);
         }
     }
 
