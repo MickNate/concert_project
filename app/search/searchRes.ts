@@ -41,7 +41,7 @@ export async function searchRes(previousState: string, formData: FormData){
         }
     }
 
-    if(results.length > 0)
+    if(results.length == 0)
         return "Nobody has attended a concert of this artist."
 
 
