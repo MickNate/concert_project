@@ -29,7 +29,7 @@ export async function searchRes(previousState: string, formData: FormData){
             for(let i = 0; i < concert.length; i++){
                 results.push(concert[i].user_id);
             }
-            return {results};
+            return "Results are " + results[0];
         }
 
     }
