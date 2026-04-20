@@ -28,5 +28,14 @@ export default async function Result(){
             );
         }
     }
+    else{
+        return(
+            <body>
+            <div>
+                <p>You didn&#39;t search for anything.</p>
+            </div>
+            </body>
+        );
+    }
 
 }
