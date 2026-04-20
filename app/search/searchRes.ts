@@ -16,7 +16,7 @@ export async function searchRes(previousState: string, formData: FormData){
             .textSearch('*', artist)
 
         if(error){
-            return "Error: " + error.code + " : " + error.message;
+            return "Error for concert table: " + error.code + " : " + error.message;
         }
 
         if(concert == null){
@@ -29,7 +29,7 @@ export async function searchRes(previousState: string, formData: FormData){
                 .select('username')
                 .eq('user_id',concert)
             if(error){
-                return "Error: " + error.code + " : " + error.message;
+                return "Error for user table: " + error.code + " : " + error.message;
             }
 
             return {user} + " was found";
