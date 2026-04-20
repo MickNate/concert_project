@@ -24,16 +24,17 @@ export async function conEdit(previousState: string, formData: FormData){
         showdate = null
 
     const cookieStore = await cookies();
-    const logCookie = cookieStore.get('user');
+    const logCookie = cookieStore.get('id');
     const cookieValue = logCookie?.value
 
     const supabase = await createClient();
 
     //, other_artists: other, tour_name: tour, venue: venue, date_of: showdate
+
     const { error } = await supabase
         .from('concert_concerts')
         .update({ headliner: head, other_artists: other, tour_name: tour, date_of: showdate, venue: venue})
-        .eq('username', cookieValue)
+        .eq('user_id', cookieValue)
         .select()
 
     if (error)

@@ -30,6 +30,7 @@ export async function loginCon(previousState: string, formData: FormData){
         if((userKey.username === username) && (userKey.password === password)){
             const cookieStore = await cookies();
             cookieStore.set('user', userKey.username, {secure: true})
+            cookieStore.set('id', userKey.user_id, {secure: true})
 
             redirect(getLink(username))
             return "Login successful!"
