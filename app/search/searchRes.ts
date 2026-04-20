@@ -22,7 +22,7 @@ export async function searchRes(previousState: string, formData: FormData){
         if (error) {
             return "Error for concert table: " + error.code + " : " + error.message;
         }
-        if(concert == null){
+        if(concert == null || concert == undefined ){
             return "No user appears to have attended this concert.";
         }
 
