@@ -20,12 +20,16 @@ export async function searchRes(previousState: string, formData: FormData){
         if (error) {
             return "Error for concert table: " + error.code + " : " + error.message;
         }
-        if(concert == null || concert == undefined ){
+        if(concert == null || concert.length == 0 ){
             return "No user appears to have attended this concert.";
         }
 
         else{
-            return "We found " + {input} + " attended.";
+            const results = [];
+            for(let i = 0; i < concert.length; i++){
+                results.push(concert[i].user_id);
+            }
+            return results;
         }
 
     }
