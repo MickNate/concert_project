@@ -61,7 +61,7 @@ export async function searchRes(previousState: string, formData: FormData){
     const cookieStore = await cookies();
     cookieStore.set('search', JSON.stringify(finres), {secure: true});
 
-    const baseUrl = "https://concert-project.vercel.app/result/";
+    const baseUrl = "https://concert-project.vercel.app/result";
 
     redirect(baseUrl);
 
