@@ -31,5 +31,5 @@ export async function conAdd(previousState: string, formData: FormData){
     if (error)
         return "Error: " + error.code + " : " + error.message + "User_id is " + {user};
     else
-        return "Successfully created!";
+        return "Successfully created concert for" + head + "!";
 }
