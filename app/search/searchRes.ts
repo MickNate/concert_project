@@ -25,7 +25,7 @@ export async function searchRes(previousState: string, formData: FormData){
 
         console.log("Made it pass the concert table.");
 
-        if(concert == null){
+        if(concert == null || concert.toString() == " "){
             return "No users found that have attended this artist.";
         }
         else{
