@@ -58,6 +58,6 @@ export async function searchRes(previousState: string, formData: FormData){
 
     const url = "https://concert-project.vercel.app/profile/guestview/"
     const fullurl = url.concat(finres.toString())
-    return `<a href="${fullurl}">${finres.toString()}</a>`;
+    return {`<a href="${fullurl}">${finres.toString()}</a>`};
 
 }
