@@ -1,6 +1,7 @@
 "use server";
 
 import {createClient} from "@/utils/supabase/server";
+import {redirect} from "next/navigation";
 
 export async function conAdd(previousState: string, formData: FormData){
     await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -30,6 +31,8 @@ export async function conAdd(previousState: string, formData: FormData){
         .insert({ user_id: parseInt(user, 10), headliner: head, other_artists: other, tour_name: tour, date_of: showdate, venue: venue})
     if (error)
         return "Error: " + error.code + " : " + error.message + "User_id is " + {user};
-    else
+    else {
+        redirect("https://concert-project.vercel.app/profile/ownerview/");
         return "Successfully created concert for" + head + "!";
+    }
 }

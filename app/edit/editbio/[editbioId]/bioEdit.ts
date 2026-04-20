@@ -20,7 +20,9 @@ export async function bioEdit(previousState: string, formData: FormData){
 
         if (error)
             return "Error: " + error.code + " : " + error.message;
-        else
+        else {
+            redirect("https://concert-project.vercel.app/profile/ownerview/");
             return "Successfully updated:" + {data};
+        }
     }
 }

@@ -2,6 +2,7 @@
 
 import {createClient} from "@/utils/supabase/server";
 import { cookies } from 'next/headers'
+import {redirect} from "next/navigation";
 
 export async function conEdit(previousState: string, formData: FormData){
     await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -39,6 +40,8 @@ export async function conEdit(previousState: string, formData: FormData){
 
     if (error)
         return "Error: " + error.code + " : " + error.message + "Concert_id is " + {con};
-    else
+    else {
+        redirect("https://concert-project.vercel.app/profile/ownerview/");
         return "Successfully updated concert for" + {head} + "!";
+    }
 }
