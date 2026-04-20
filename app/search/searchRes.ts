@@ -22,7 +22,10 @@ export async function searchRes(previousState: string, formData: FormData){
         }
 
         if(concert == null){
-            return "No users found that have attended this artist."
+            return "No users found that have attended this artist.";
+        }
+        if(concert[0].user_id == null){
+            return "User Id not accessible";
         }
         else{
             const supabase = await createClient();
