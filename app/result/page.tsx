@@ -20,6 +20,7 @@ export default async function Result(){
             return (
                 <body>
                 <div>
+                    <p>Here&#39;s the users that searched for your artist!</p>
                     <ul id="foundUsers">
                         {getList(users)}
                     </ul>
