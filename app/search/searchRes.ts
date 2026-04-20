@@ -25,7 +25,7 @@ export async function searchRes(previousState: string, formData: FormData){
         }
 
         else{
-            return "We found " + concert[0].toString() + " attended.";
+            return "We found " + {input} + " attended.";
         }
 
     }
