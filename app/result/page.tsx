@@ -9,6 +9,7 @@ export default async function Result(){
     if(cookieStore.has('search')) {
         if (cookieValue != null) {
             const users = JSON.parse(cookieValue);
+
             function getList(userList: string){
                 let display = "";
                 const url = "https://concert-project.vercel.app/profile/guestview/";
@@ -17,12 +18,13 @@ export default async function Result(){
                 }
                 return display;
             }
+
             return (
                 <body>
                 <div>
                     <p>Here&#39;s the users that searched for your artist!</p>
                     <ul id="foundUsers">
-                        {getList(users)}
+                        <li>{getList(users)}</li>
                     </ul>
                 </div>
                 </body>
