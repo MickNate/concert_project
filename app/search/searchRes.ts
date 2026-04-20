@@ -13,7 +13,7 @@ export async function searchRes(previousState: string, formData: FormData){
         const { data: concert, error} = await supabase
             .from("concert_concerts")
             .select('user_id')
-            .textSearch('headliner', artist)
+            .textSearch('headliner', artist, { type: 'phrase', config: 'english'})
 
         if(error){
             return "Error for concert table: " + error.code + " : " + error.message;
@@ -24,10 +24,11 @@ export async function searchRes(previousState: string, formData: FormData){
         }
         else{
             const supabase = await createClient();
+
             const {data: user, error} = await supabase
                 .from("concert_users")
                 .select('username')
-                .eq('user_id',concert[0].user_id)
+                .eq('user_id',concert)
             if(error){
                 return "Error for user table: " + error.code + " : " + error.message;
             }
