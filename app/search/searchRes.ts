@@ -63,7 +63,7 @@ export async function searchRes(previousState: string, formData: FormData){
 
     const baseUrl = "https://concert-project.vercel.app/result/";
 
-    redirect(baseUrl);
+    //redirect(baseUrl);
 
     return "Users found!"
 
