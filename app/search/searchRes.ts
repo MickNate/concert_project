@@ -16,6 +16,8 @@ export async function searchRes(previousState: string, formData: FormData){
             .from("concert_concerts")
             .select('user_id')
             .textSearch('headliner', input, { type: 'phrase', config: 'english'})
+            .select('user_id')
+            .textSearch('other_artists', input, { type: 'phrase', config: 'english'})
 
         if(error){
             return "Error for concert table: " + error.code + " : " + error.message;
@@ -31,21 +33,22 @@ export async function searchRes(previousState: string, formData: FormData){
 
             console.log("Starting the user table.");
 
-            const {data: user, error} = await supabase
-                .from("concert_users")
-                .select('username')
-                .eq('user_id',concert[0].user_id)
+            const found = [];
 
+            for(const record of concert){
+                const {data: user, error} = await supabase
+                    .from("concert_users")
+                    .select('username')
+                    .eq('user_id',record.user_id)
+                if(user != null)
+                    found.push(user.toString())
+                if(error){
+                    return "Error for user table: " + error.code + " : " + error.message;
+                }
+            }
             console.log("Made it pass the user table.");
 
-            if(error){
-                return "Error for user table: " + error.code + " : " + error.message;
-            }
-            if(user == null){
-                return "Error accessing user."
-            }
-
-            return {user} + " was of the artists found";
+            return found;
         }
 
     }
