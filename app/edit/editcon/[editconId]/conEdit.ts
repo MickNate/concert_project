@@ -34,7 +34,7 @@ export async function conEdit(previousState: string, formData: FormData){
     const { error } = await supabase
         .from('concert_concerts')
         .update({ headliner: head, other_artists: other, tour_name: tour, date_of: showdate, venue: venue})
-        .eq('conId', con)
+        .eq('concert_id', con)
         .select()
 
     if (error)
