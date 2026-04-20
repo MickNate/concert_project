@@ -23,9 +23,7 @@ export default async function Result(){
                     <ul>
                         {users.map((user : string) => (
                             <li key={user}>
-                                <a href={`/${user}`}>
-                                    {user}
-                                </a>
+                                <a href={getLink(user)}>{user}</a>
                             </li>
                         ))}
                     </ul>
