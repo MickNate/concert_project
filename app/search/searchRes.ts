@@ -16,6 +16,8 @@ export async function searchRes(previousState: string, formData: FormData){
             .from("concert_concerts")
             .select('user_id')
             .textSearch('headliner', input, {type: 'phrase', config: 'english'})
+            .select('user_id')
+            .textSearch('other_artists', input, {type: 'phrase', config: 'english'})
 
         if (error) {
             return "Error for concert table: " + error.code + " : " + error.message;
