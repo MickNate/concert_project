@@ -56,6 +56,6 @@ export async function searchRes(previousState: string, formData: FormData){
             finres.concat(user[0].username);
     }
 
-    return "Results are " + {finres};
+    return "Results are " + finres.toString();
 
 }
