@@ -9,7 +9,7 @@ export async function searchRes(previousState: string, formData: FormData){
     if(artist == null || artist == "")
         return "Nothing searched";
     else{
-        const input =  "'" + artist.replace(" ", " & ") + "'";
+        const input =  "'" + artist.replace(" ", "' & '") + "'";
 
         const supabase = await createClient();
         const { data: concert, error} = await supabase
