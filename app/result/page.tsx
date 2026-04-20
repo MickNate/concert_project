@@ -18,7 +18,6 @@ export default async function Result(){
                 const baseUrl = "https://concert-project.vercel.app/profile/guestview/"
                 return baseUrl.concat(input)
             }
-            cookieStore.delete('search');
 
             console.log("Starting If Return");
             return (
