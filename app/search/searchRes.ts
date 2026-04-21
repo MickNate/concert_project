@@ -8,6 +8,8 @@ export async function searchRes(previousState: string, formData: FormData){
     await new Promise((resolve) => setTimeout(resolve, 2000))
     const artist = formData.get("value") as string;
 
+    const cookieStore = await cookies();
+
     if(artist == null || artist == "")
         return "Nothing searched";
 
@@ -58,8 +60,9 @@ export async function searchRes(previousState: string, formData: FormData){
             finres.push(user[0].username);
     }
 
-    const cookieStore = await cookies();
+
     cookieStore.set('search', JSON.stringify(finres), {secure: true});
+
 
     const baseUrl = "https://concert-project.vercel.app/result";
 
