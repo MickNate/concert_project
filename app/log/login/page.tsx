@@ -16,7 +16,7 @@ export default function Login(){
                     <label id="usernameInput">Username: </label>
                     <input type="text" name="usernameInput" id="usernameInput" placeholder="Username here"/><br/>
                     <label id="passwordInput">Password: </label>
-                    <input type="text" name="passwordInput" id="passwordInput" placeholder="Password here"/><br/>
+                    <input type="password" name="passwordInput" id="passwordInput" placeholder="Password here"/><br/>
                     <button type="submit">
                         {isLoading ? "Logging In..." : "Login"}
                     </button>
