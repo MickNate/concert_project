@@ -23,6 +23,9 @@ export default function Login(){
                     {error && <p>{error}</p>}
                 </form>
             </p>
+            <p>
+                New user? <a href="../create">Click here</a> to create an account!
+            </p>
         </div>
     );
 }
