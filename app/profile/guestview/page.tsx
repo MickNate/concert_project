@@ -1,7 +1,17 @@
 export default function GuestView(){
     return (
-        <p>
-            Need to clarify the name of a profile. Check the list to see them all.
-        </p>
+        <body>
+        <div>
+            <p>
+                Either login or create an account to view your profile!
+            </p>
+            <a href="../create">
+                <button>New User</button>
+            </a>
+            <a href="../log/login">
+                <button>Returning User</button>
+            </a>
+        </div>
+        </body>
     );
 }

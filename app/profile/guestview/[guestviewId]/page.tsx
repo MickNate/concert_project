@@ -1,6 +1,7 @@
 import "./guestview.css";
 import {createClient} from "@/utils/supabase/server";
 import {Key} from "react";
+import {redirect} from "next/navigation";
 
 export default async function GuestView( { params }: {
     params: Promise<{ guestviewId: string}>;
@@ -11,11 +12,7 @@ export default async function GuestView( { params }: {
     const { data: user } = await supabase.from("concert_users").select();
 
     if (user == null){
-        return(
-            <body>
-            <p>This user does not exist</p>
-            </body>
-        )
+        redirect("https://concert-project.vercel.app/profile/guestview");
     }
 
     const userKey = user.find(person => person.username === guestviewID)

@@ -10,6 +10,9 @@ export default async function OwnerView(){
     if(cookieStore.has('user')){
         redirect("https://concert-project.vercel.app/profile/ownerview/" + cookieValue);
     }
+    else{
+        redirect("https://concert-project.vercel.app/profile/guestview/")
+    }
 
     return (
         <p>
