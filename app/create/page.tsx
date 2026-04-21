@@ -15,9 +15,9 @@ export default function Create(){
                     <label htmlFor="username">Username:</label><br/>
                     <input type="text" id="username" name="username"/><br/>
                     <label htmlFor="password">Password:</label><br/>
-                    <input type="text" id="password" name="password"/><br/>
+                    <input type="password" id="password" name="password"/><br/>
                     <label htmlFor="verpassword">Verify Password:</label><br/>
-                    <input type="text" id="verpassword" name="verpassword"/><br/><br/>
+                    <input type="password" id="verpassword" name="verpassword"/><br/><br/>
                     <button type="submit">
                         {isLoading ? "Creating..." : "Create"}
                     </button>
