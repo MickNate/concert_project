@@ -9,6 +9,7 @@ export async function conEdit(previousState: string, formData: FormData){
     const con = formData.get("con") as string;
     const head = formData.get("head") as string;
     const other = formData.get("other") as string;
+    const genre = formData.get("genre") as string;
     const venue = formData.get("venue") as string;
     const tour = formData.get("tour") as string;
     let showdate: null | string = formData.get("showdate") as string;
@@ -34,7 +35,7 @@ export async function conEdit(previousState: string, formData: FormData){
 
     const { error } = await supabase
         .from('concert_concerts')
-        .update({ headliner: head, other_artists: other, tour_name: tour, date_of: showdate, venue: venue})
+        .update({ headliner: head, other_artists: other, tour_name: tour, date_of: showdate, genre: genre, venue: venue})
         .eq('concert_id', con)
         .select()
 

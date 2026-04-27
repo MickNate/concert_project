@@ -33,11 +33,12 @@ export default async function Home(){
                     <a href="../addcon"><button>Add Concert</button></a><br/>
                     <ul id="latestPosts">
                         {entry.map((item: { concert_id: Key, date_of: Key, headliner: Key,
-                            tour_name: Key, other_artists: Key, venue: Key}) => (
+                            tour_name: Key, other_artists: Key, venue: Key, genre: Key}) => (
                             <li key={item.concert_id}>
                                 <br/>
                                 Headliner: {item.headliner}<br/>
                                 Other Artists: {item.other_artists}<br/>
+                                Genre: {item.genre}<br/>
                                 Tour: {item.tour_name}<br/>
                                 Venue: {item.venue}<br/>
                                 Date: {item.date_of}<br/>
@@ -66,10 +67,11 @@ export default async function Home(){
                 <p>Here is the latest news from other concert fans!</p>
                 <ul id="latestPosts">
                     {entry.map((item: { concert_id: Key, date_of: Key, headliner: Key,
-                        tour_name: Key, other_artists: Key, venue: Key}) => (
+                        tour_name: Key, other_artists: Key, venue: Key, genre: Key}) => (
                         <li key={item.concert_id}>
                             Headliner: {item.headliner}<br/>
                             Other Artists: {item.other_artists}<br/>
+                            Genre: {item.genre}<br/>
                             Tour: {item.tour_name}<br/>
                             Venue: {item.venue}<br/>
                             Date: {item.date_of}<br/>

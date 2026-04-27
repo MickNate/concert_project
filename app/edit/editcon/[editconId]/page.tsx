@@ -22,6 +22,8 @@ export default function EditCon() {
                 <input type="text" id="head" name="head"/><br/>
                 <label htmlFor="other">Other Artists (please put a comma between each artist):</label><br/>
                 <input type="text" id="other" name="other"/><br/>
+                <label htmlFor="genre">Genre:</label><br/>
+                <input type="text" id="genre" name="genre"/><br/>
                 <label htmlFor="tour">Tour:</label><br/>
                 <input type="text" id="tour" name="tour"/><br/>
                 <label htmlFor="showdate">Show date:</label><br/>

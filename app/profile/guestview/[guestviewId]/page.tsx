@@ -55,9 +55,10 @@ export default async function GuestView( { params }: {
         <div id="conc">
             <h1>Concert List:</h1>
             <ul id={"concertList"}>
-                {concert.map((item: { user_id: Key; headliner: Key, venue: Key, other_artists: Key, date_of: Key, tour_name: Key}) => (
+                {concert.map((item: { user_id: Key; headliner: Key, genre: Key, venue: Key, other_artists: Key, date_of: Key, tour_name: Key}) => (
                     <li key ={item.user_id}>Headliner: {item.headliner}<br/>
                         Other Artists: {item.other_artists}<br/>
+                        Genre: {item.genre}<br/>
                         Tour: {item.tour_name}<br/>
                         Venue: {item.venue}<br/>
                         Date: {item.date_of}<br/>
