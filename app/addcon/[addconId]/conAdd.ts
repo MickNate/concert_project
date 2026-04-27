@@ -8,6 +8,7 @@ export async function conAdd(previousState: string, formData: FormData){
     const user = formData.get("user") as string;
     const head = formData.get("head") as string;
     const other = formData.get("other") as string;
+    const genre =formData.get("genre") as string;
     const venue = formData.get("venue") as string;
     const tour = formData.get("tour") as string;
     let showdate: null | string = formData.get("showdate") as string;
@@ -28,7 +29,7 @@ export async function conAdd(previousState: string, formData: FormData){
     //, other_artists: other, tour_name: tour, venue: venue, date_of: showdate
     const { error } = await supabase
         .from('concert_concerts')
-        .insert({ user_id: parseInt(user, 10), headliner: head, other_artists: other, tour_name: tour, date_of: showdate, venue: venue})
+        .insert({ user_id: parseInt(user, 10), headliner: head, other_artists: other, tour_name: tour, date_of: showdate, venue: venue, genre: genre})
     if (error)
         return "Error: " + error.code + " : " + error.message + "User_id is " + {user};
     else {
