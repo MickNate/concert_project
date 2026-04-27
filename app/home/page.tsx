@@ -24,7 +24,7 @@ export default async function Home(){
             <p>Error accessing database</p>
         )
 
-    const addConLink = "https://concert-project.vercel.app/addcon/" + {cookieExtra};
+    const addConLink = "https://concert-project.vercel.app/addcon/" + cookieExtra;
 
     if (cookieStore.has('user'))
         return(
