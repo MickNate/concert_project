@@ -8,7 +8,9 @@ export default async function Home(){
 
     const cookieStore = await cookies()
     const logCookie = cookieStore.get('user')
+    const idCookie = cookieStore.get('id')
     const cookieValue = logCookie?.value
+    const cookieExtra = idCookie?.value
 
     const supabase = await createClient();
     const { data: entry } = await supabase
@@ -22,6 +24,8 @@ export default async function Home(){
             <p>Error accessing database</p>
         )
 
+    const addConLink = "https://concert-project.vercel.app/addcon/" + {cookieExtra};
+
     if (cookieStore.has('user'))
         return(
             <body>
@@ -30,7 +34,7 @@ export default async function Home(){
                 </div>
                 <div>
                     <p>Here is the latest news from other concert fans! Why not add your own latest?</p>
-                    <a href="../addcon"><button>Add Concert</button></a><br/>
+                    <a href={addConLink} ><button>Add Concert</button></a><br/>
                     <ul id="latestPosts">
                         {entry.map((item: { concert_id: Key, date_of: Key, headliner: Key,
                             tour_name: Key, other_artists: Key, venue: Key, genre: Key}) => (
